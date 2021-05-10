@@ -1,0 +1,9 @@
+<?php
+router::addFunction("list","shop");
+router::addFunction("show","shop");
+router::addFunction("countProds","shop");
+router::addFunction("details","shop");
+router::addFunction("filters","shop");
+router::addFunction("search","shop");
+router::addFunction("showLikes","shop");
+router::addFunction("favorites","shop");

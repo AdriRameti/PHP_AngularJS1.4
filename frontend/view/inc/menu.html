@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Menu </title>
+</head>
+<body>
+<header id="header" class="fixed-top ">
+    <div class="container">
+
+      <div class="logo float-left">
+        <h1 class="text-light">
+          <a href="/FrameworkPHP/home">
+            <span>KIWEAR</span>
+          </a>
+        </h1>
+      </div>
+
+      <nav class="nav-menu float-right d-none d-lg-block">
+        <ul id="opc_menus">
+          <li>
+            <div class="home">
+              <a href="/FrameworkPHP/home/list" data-tr="Homepage" >Homepage</a>
+            </div>
+          </li>
+          <li><a href="index.php?page=about" data-tr="About Us">About Us</a></li>
+          <li><a href="/FrameworkPHP/shop/list" data-tr="Clothing">Clothing</a></li>
+          <li><a href="index.php?page=contact" data-tr="Contact Us">Contact Us</a></li>
+          <li class="drop-down">
+            <a href="" data-tr="Languages">Languages</a>
+            <ul>
+				<li><a id="opc_es" data-tr="Spanish">Spanish</a></li>
+				<li><a id="opc_en" data-tr="English">English</a></li>
+				<li><a id="opc_val" data-tr="Valencian">Valencian</a></li>
+            </ul>
+          </li>
+        <li class="drop-down">
+          <a>
+            <i class="fas fa-user-plus icono_login"></i>
+          </a>
+          <ul class='usuario'>
+            <li>
+            <a>Log Out
+              <span>
+                <i class="fas fa-user-times"></i>
+              </span>
+            </a>
+          </li>
+
+          </ul>
+        </li>
+        <li>
+          <a>
+            <i class="fas fa-shopping-cart icono_login"></i>
+          </a>
+        </li> 
+        <!-- COMENTAR DESDE EL LI DE ARRIBA HASTA EL LI BAJO DEL UL -->
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+</body>
+
+</html>

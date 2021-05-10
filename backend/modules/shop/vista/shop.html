@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=+, initial-scale=1.0">
+    <title>Shop</title>
+</head>
+<body>
+    <div class="container_list">
+        <header class="Head">
+            <div class="tituloL">
+                <h1>Nuestros Artículos</h1>
+                <p>Descubre todos los artículos del mercado y escoge el diseño que mas te guste</p>
+                <form action="" class="formBusc">
+                    <input type="text" class="busqueda" id="busqueda" placeholder="Buscar"/>
+                </form>
+                <div class="catego_List" id="catego_List">
+                    <div class="contenedor-filter">
+                        <form class="formulario" name="filtrosShop" id="filtrosShop"> 
+                            <div>
+                                <a class="botones3" id="aplicar">Aplicar</a>
+                                <a class="activo" id="remove">Todos</a>
+                            </div>
+                            <br>
+                            <div class="marca">
+                                <h2>Escoja una marca</h2>
+                                <input type="radio" name="marca" id="marca1" value="Nike" onclick=validaFilters()>
+                                <label for="marca1">Nike</label>
+                                <br>
+                                <input type="radio" name="marca" id="marca2" value="Adidas" onclick=validaFilters()>
+                                <label for="marca2">Adidas</label>
+                                <br>
+                                <input type="radio" name="marca" id="marca3" value="Carhartt" onclick=validaFilters()>
+                                <label for="marca3">Carhartt</label>
+                                <br>
+                                <input type="radio" name="marca" id="marca4" value="Bape" onclick=validaFilters()>
+                                <label for="marca4">Bape</label>
+                                <br>
+                                <input type="radio" name="marca" id="marca5" value="Guess" onclick=validaFilters()>
+                                <label for="marca5">Guess</label>
+                                <br>
+                                <input type="radio" name="marca" id="marca6" value="Polo Ralph Lauren" onclick=validaFilters()>
+                                <label for="marca6">Polo Ralph Lauren</label>
+                                <br>
+                                <input type="radio" name="marca" id="marca7" value="Obey" onclick=validaFilters()>
+                                <label for="marca7">Obey</label>
+                                <br>
+                                <input type="radio" name="marca" id="marca8" value="Supreme" onclick=validaFilters()>
+                                <label for="marca8">Supreme</label>
+                                <br>
+                                <input type="radio" name="marca" id="marca9" value="The North Face" onclick=validaFilters()>
+                                <label for="marca9">The North Face</label>
+                                <br>
+                            </div>
+                            <br>
+                            <div class="talla">
+                                <h2>Escoja una talla</h2>
+                                <input type="radio" name="talla" id="talla1" value="S" onclick=validaFilters()>
+                                <label for="talla1">S</label>
+                                <br>
+                                <input type="radio" name="talla" id="talla2" value="M" onclick=validaFilters()>
+                                <label for="talla2">M</label>
+                                <br>
+                                <input type="radio" name="talla" id="talla3" value="L" onclick=validaFilters()>
+                                <label for="talla3">L</label>
+                                <br>
+                                <input type="radio" name="talla" id="talla4" value="XL" onclick=validaFilters()>
+                                <label for="talla4">XL</label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div id="headShop"></div>
+    <main class="grid" id="grid" >
+        <div id="listS" class="listS"></div>
+    </main>
+    </div>
+</body>
+<!-- <script src="modules/shop/vista/js/shop.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/muuri@0.9.3/dist/muuri.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/web-animations-js@2.3.2/web-animations.min.js"></script>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html ng-app="kiwear" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiwear</title>
+    <!--LIBRERIAS ANGULAR-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-route.min.js"></script>
+    <script src="https://npmcdn.com/angular-toastr/dist/angular-toastr.tpls.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.1.2/ui-bootstrap-tpls.min.js"></script>
+    <!-- FAVICONS -->
+    <link href="frontend/view/img/assets/img/favicon.png" rel="icon">
+    <link href="frontend/view/img/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+
+    <!--Jquery JS-->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    
+    <!-- Vendor CSS Files -->
+    <link href="frontend/view/img/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="frontend/view/img/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="frontend/view/img/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="frontend/view/img/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="frontend/view/img/assets/vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="frontend/view/img/assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="frontend/view/img/assets/vendor/aos/aos.css" rel="stylesheet">
+    <script src="frontend/view/img/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="frontend/view/img/assets/vendor/php-email-form/validate.js"></script>
+    <script src="frontend/view/img/assets/vendor/venobox/venobox.min.js"></script>
+    <script src="frontend/view/img/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+    <script src="frontend/view/img/assets/vendor/counterup/counterup.min.js"></script>
+    <script src="frontend/view/img/assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="frontend/view/img/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="frontend/view/img/assets/vendor/aos/aos.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="frontend/view/img/assets/js/main.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+
+    <!-- DATATABLE -->
+	<link rel="stylesheet" href="//cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css"/>
+	<script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+
+    <!--Datepicker-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.css" />
+	
+    <script type="text/javascript">
+
+  		$(function() {
+			$( "#fechaEnv" ).datepicker();
+			$( "#fechaE" ).datepicker();
+  		});
+	</script>
+
+    <!--FontAwesome Icons-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <!--Firebase-->
+    <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
+
+    <!-- APP SCRIPTS AND LINKS -->
+    <script src="frontend/router.js"></script>
+    <link href="frontend/view/css/style.css" rel="stylesheet">
+    <!-- <script src="modules/home/vista/js/home.js"></script>
+    <script src="frontend/view/js/init.js"></script>
+    <script src="modules/cart/vista/js/cart.js"></script>
+    <script src="modules/shop/vista/js/shop.js"></script>
+    <script src="modules/login/vista/js/login.js"></script> -->
+
+</head>
+<body>
+    <div ng-include='"frontend/view/inc/menu.html"'></div>
+    
+    <div ng-include='"frontend/view/inc/footer.html"'></div>
+    
+
+    
+</body>
+</html>

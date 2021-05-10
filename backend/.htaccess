@@ -1,0 +1,27 @@
+RewriteEngine on
+RewriteBase /FrameworkPHP/
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+Rewriterule ^([^/]*)/([^/]*)/([^/]*)/([^/]*)$ index.php?page=$1&op=$2&param=$3&param2=$4&param3=$5 [L,NC,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+Rewriterule ^([^/]*)/([^/]*)/([^/]*)/([^/]*)$ index.php?page=$1&op=$2&param=$3&param2=$4 [L,NC,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+Rewriterule ^([^/]*)/([^/]*)/([^/]*)$ index.php?page=$1&op=$2&param=$3 [L,NC,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+Rewriterule ^([^/]*)/([^/]*)$ index.php?page=$1&op=$2 [L,NC,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+Rewriterule ^([^/]*)$ index.php?page=$1 [L,NC,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-l
+Rewriterule ^(.+)$ index.php?page=$1 [QSA,L]
