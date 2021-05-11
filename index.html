@@ -69,7 +69,10 @@
 
     <!-- APP SCRIPTS AND LINKS -->
     <script src="frontend/router.js"></script>
+    <script src="frontend/connector.js"></script>
     <link href="frontend/view/css/style.css" rel="stylesheet">
+    <script type = "text/javascript" src = "frontend/modules/home/controller/controller_home.js"></script>
+    
     <!-- <script src="modules/home/vista/js/home.js"></script>
     <script src="frontend/view/js/init.js"></script>
     <script src="modules/cart/vista/js/cart.js"></script>
@@ -79,7 +82,7 @@
 </head>
 <body>
     <div ng-include='"frontend/view/inc/menu.html"'></div>
-    
+    <div ng-view autoscroll = "true"></div>
     <div ng-include='"frontend/view/inc/footer.html"'></div>
     
 
