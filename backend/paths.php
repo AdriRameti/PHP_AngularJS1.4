@@ -1,7 +1,7 @@
 <?php
 define ('SITE_ROOT', $_SERVER['DOCUMENT_ROOT'] . '/');
-define ('SITE_PATH', 'http://' . $_SERVER['HTTP_HOST'] . '/backend/');
-define("SYSTEM_PATH","backend//"); //SYSTEM PATH, PATH RAIZ
+define ('SITE_PATH', 'http://' . $_SERVER['HTTP_HOST'] . 'PHP_AngularJS/backend/');
+define("SYSTEM_PATH","PHP_AngularJS/backend/"); //SYSTEM PATH, PATH RAIZ
 define("ROUTER_PATH",SITE_ROOT.SYSTEM_PATH."router/"); //CARPETA ROUTER
 define("MODULES_PATH",SITE_ROOT.SYSTEM_PATH."modules/"); //CARPETA MODULES
 define("UTILS_PATH",SITE_ROOT.SYSTEM_PATH."utils/"); // CARPETA UTILS 
@@ -10,8 +10,8 @@ define("CSS_PATH",VIEW_PATH."css/"); //CARPETA CSS
 define("IMG_PATH",VIEW_PATH."img/"); //CARPETA IMG
 define("INC_PATH",VIEW_PATH."inc/"); //CARPETA INC
 define("JS_PATH",VIEW_PATH."js/"); //CARPETA JS
-define("RESOURCES_PATH",SYSTEM_PATH."resources/"); //CARPETA RESOURCES
-define("MODEL_PATH",SYSTEM_PATH."model/"); //CARPETA MODEL
+define("RESOURCES_PATH",SITE_ROOT.SYSTEM_PATH."resources/"); //CARPETA RESOURCES
+define("MODEL_PATH",SITE_ROOT.SYSTEM_PATH."model/"); //CARPETA MODEL
 /* CONTACT */
 define("CONTROLLER_CONTACT_PATH",MODULES_PATH.'contact/controller/');
 define("RECURSOS_CONTACT_PATH",MODULES_PATH.'contact/recursos/');

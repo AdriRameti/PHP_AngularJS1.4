@@ -476,6 +476,12 @@ header .busqueda{
   }
 /*********************************************************************/
 /*****************IMAGENES SHOP***************************************/
+.shop{
+	position: relative;
+	top:-1000px;
+	left: 390px;
+	/* width: 100%; */
+}
 .grid{
 	position: absolute;
 	top:400px;
@@ -1850,6 +1856,7 @@ body {
 	position: relative;
 	border-radius: 4px;
 	margin: 0 0 30px 0;
+	
   }
   
   .portfolio .portfolio-item img {

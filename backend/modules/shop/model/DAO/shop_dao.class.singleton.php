@@ -9,7 +9,11 @@ class shop_dao{
         }
         return self::$_instance;
     }
-
+    public function select_list($db){
+        $sql = "SELECT * FROM ropa";
+        $stmt = $db->ejecutar($sql);
+        return $db->listar($stmt);
+    }
     public function select_show($db,$arryArguments){
         $nom = $arryArguments[0];
         $offset = $arryArguments[1];

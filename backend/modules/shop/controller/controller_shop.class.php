@@ -1,14 +1,21 @@
 <?php
+$_POST = json_decode(file_get_contents('php://input'), true);
 class controller_shop{
-    public function list(){
-        require INC_PATH."header.php";
-        require INC_PATH."menu.html";
-        Content::LoadView("shop","shop");
-        // include (INC_PATH."footer.php");
+    // public function list(){
+    //     require INC_PATH."header.php";
+    //     require INC_PATH."menu.html";
+    //     Content::LoadView("shop","shop");
+    //     // include (INC_PATH."footer.php");
+    // }
+    public function listar(){
+        $json = array();
+        $json = Content::LoadModel(MODEL_MODEL_SHOP,"shop_model","listar");
+        echo json_encode($json);
     }
     public function show(){
-        $nom = $_POST['nom'];
-        $offset = $_POST['offset'];
+        // $nom = $_GET["nombre"];
+        $nom = 'Camiseta';
+        $offset = 0;
 
         $array = array();
         array_push($array, $nom);

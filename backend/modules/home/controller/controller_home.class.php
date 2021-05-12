@@ -7,9 +7,9 @@ class controller_home{
     //     include (INC_PATH."footer.php");
     // }
     public function categories(){
-        // $json = array();
-        echo  Content::LoadModel(MODEL_MODEL_HOME,"home_model","categories");
-        // echo json_encode($json);
+        $json = array();
+        $json = Content::LoadModel(MODEL_MODEL_HOME,"home_model","categories");
+        echo json_encode($json) ;
     }
     public function Slider(){
         $json = array();

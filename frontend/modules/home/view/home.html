@@ -1,10 +1,3 @@
-
-   <!-- <head>
-      <TITLE>HOMEPAGE</TITLE>
-      <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-      <link href="view/css/style.css" reel="stylesheet">
-      
-   </head> -->
    <body>
    <section id="hero" class="d-flex justify-cntent-center align-items-center">
     <div id="heroCarousel" class="container carousel carousel-fade" data-ride="carousel">
@@ -73,11 +66,23 @@
       </ul>
     </div>
   </div>
-<div id="categories"></div>
+<!-- <div id="categories"></div> -->
+<div class="row portfolio-container" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+  <div ng-repeat="data in categories" class="col-lg-4 col-md-6 filter-clothes">
+    <div class="portfolio-item" id="scroll">
+      <img src="http://localhost/PHP_AngularJS/frontend/{{data.img}}">
+      <div class="portfolio-info">
+        <h3>
+          <a ng-click="rediShop(data.nombre)" class="venobox redicat" id="{{data.nombre}}" title="{{data.nombre}}" data-gall="portfolioGallery">{{data.nombre}}</a>
+        </h3>
+      </div>
+    </div>
+  </div>
+</div>
 
 </div>
 <!-- ======= Why Us Section ======= -->
-<section class="why-us section-bg" data-aos="fade-up" date-aos-delay="200">
+<section id="medium" class="why-us section-bg" data-aos="fade-up" date-aos-delay="200">
   <div class="container">
 
     <div class="row">

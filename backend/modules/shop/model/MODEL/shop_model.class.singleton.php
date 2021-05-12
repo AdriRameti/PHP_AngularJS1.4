@@ -15,6 +15,9 @@ class shop_model {
         return self::$_instance;
     }
 
+    public function listar(){
+        return $this->bll->listar();
+    }
     public function show($arryArguments){
         return $this->bll->show($arryArguments);
     }

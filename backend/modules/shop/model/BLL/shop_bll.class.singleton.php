@@ -17,6 +17,9 @@ class shop_bll{
         return self::$_instance;
     }
 
+    public function listar(){
+        return $this->dao->select_list($this->db);
+    }
     public function show($arryArguments){
         return $this->dao->select_show($this->db,$arryArguments);
     }

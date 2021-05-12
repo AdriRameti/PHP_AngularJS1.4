@@ -9,5 +9,13 @@ kiwear.config(['$routeProvider','$locationProvider',function($routeProvider,$loc
             return services.get('home','categories');
         }
     }
-})
+    }).when("/shop", 
+    {templateUrl: "frontend/modules/shop/view/shop.html", 
+    controller: "controller_shop",
+    resolve: {
+        listar: function(services){
+            return services.get('shop','listar');
+        }
+    }
+    })
 }]);
