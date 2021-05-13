@@ -1,5 +1,4 @@
 <?php
-$_POST = json_decode(file_get_contents('php://input'), true);
 class controller_shop{
     // public function list(){
     //     require INC_PATH."header.php";
@@ -13,8 +12,8 @@ class controller_shop{
         echo json_encode($json);
     }
     public function show(){
-        // $nom = $_GET["nombre"];
-        $nom = 'Camiseta';
+        $nom = $_POST["nombre"];
+        // $nom = 'Camiseta';
         $offset = 0;
 
         $array = array();
