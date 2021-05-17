@@ -13,59 +13,59 @@
                 <h1>Nuestros Artículos</h1>
                 <p>Descubre todos los artículos del mercado y escoge el diseño que mas te guste</p>
                 <form action="" class="formBusc">
-                    <input type="text" class="busqueda" id="busqueda" placeholder="Buscar"/>
+                    <input  type="text" ng-model="search" class="busqueda" placeholder="Buscar"/>
                 </form>
                 <div class="catego_List" id="catego_List">
                     <div class="contenedor-filter">
                         <form class="formulario" name="filtrosShop" id="filtrosShop"> 
                             <div>
-                                <a class="botones3" id="aplicar">Aplicar</a>
-                                <a class="activo" id="remove">Todos</a>
+                                <a ng-click="aplicar()" class="botones3" id="aplicar">Aplicar</a>
+                                <a ng-click="removeFilters()" class="botones3" id="remove">Todos</a>
                             </div>
                             <br>
                             <div class="marca">
                                 <h2>Escoja una marca</h2>
-                                <input type="radio" name="marca" id="marca1" value="Nike" onclick=validaFilters()>
+                                <input type="radio" name="marca" id="marca1" value="Nike" ng-click="validaFilters()">
                                 <label for="marca1">Nike</label>
                                 <br>
-                                <input type="radio" name="marca" id="marca2" value="Adidas" onclick=validaFilters()>
+                                <input type="radio" name="marca" id="marca2" value="Adidas" ng-click="validaFilters()">
                                 <label for="marca2">Adidas</label>
                                 <br>
-                                <input type="radio" name="marca" id="marca3" value="Carhartt" onclick=validaFilters()>
+                                <input type="radio" name="marca" id="marca3" value="Carhartt" ng-click="validaFilters()">
                                 <label for="marca3">Carhartt</label>
                                 <br>
-                                <input type="radio" name="marca" id="marca4" value="Bape" onclick=validaFilters()>
+                                <input type="radio" name="marca" id="marca4" value="Bape" ng-click="validaFilters()">
                                 <label for="marca4">Bape</label>
                                 <br>
-                                <input type="radio" name="marca" id="marca5" value="Guess" onclick=validaFilters()>
+                                <input type="radio" name="marca" id="marca5" value="Guess" ng-click="validaFilters()">
                                 <label for="marca5">Guess</label>
                                 <br>
-                                <input type="radio" name="marca" id="marca6" value="Polo Ralph Lauren" onclick=validaFilters()>
+                                <input type="radio" name="marca" id="marca6" value="Polo Ralph Lauren" ng-click="validaFilters()">
                                 <label for="marca6">Polo Ralph Lauren</label>
                                 <br>
-                                <input type="radio" name="marca" id="marca7" value="Obey" onclick=validaFilters()>
+                                <input type="radio" name="marca" id="marca7" value="Obey" ng-click="validaFilters()">
                                 <label for="marca7">Obey</label>
                                 <br>
-                                <input type="radio" name="marca" id="marca8" value="Supreme" onclick=validaFilters()>
+                                <input type="radio" name="marca" id="marca8" value="Supreme" ng-click="validaFilters()">
                                 <label for="marca8">Supreme</label>
                                 <br>
-                                <input type="radio" name="marca" id="marca9" value="The North Face" onclick=validaFilters()>
+                                <input type="radio" name="marca" id="marca9" value="The North Face" ng-click="validaFilters()">
                                 <label for="marca9">The North Face</label>
                                 <br>
                             </div>
                             <br>
                             <div class="talla">
                                 <h2>Escoja una talla</h2>
-                                <input type="radio" name="talla" id="talla1" value="S" onclick=validaFilters()>
+                                <input type="radio" name="talla" id="talla1" value="S" ng-click="validaFilters()">
                                 <label for="talla1">S</label>
                                 <br>
-                                <input type="radio" name="talla" id="talla2" value="M" onclick=validaFilters()>
+                                <input type="radio" name="talla" id="talla2" value="M" ng-click="validaFilters()">
                                 <label for="talla2">M</label>
                                 <br>
-                                <input type="radio" name="talla" id="talla3" value="L" onclick=validaFilters()>
+                                <input type="radio" name="talla" id="talla3" value="L" ng-click="validaFilters()">
                                 <label for="talla3">L</label>
                                 <br>
-                                <input type="radio" name="talla" id="talla4" value="XL" onclick=validaFilters()>
+                                <input type="radio" name="talla" id="talla4" value="XL" ng-click="validaFilters()">
                                 <label for="talla4">XL</label>
                             </div>
                         </form>
@@ -79,19 +79,19 @@
             <div class="container">
           <!-- <div id="categories"></div> -->
           <div class="row portfolio-container" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
-            <div ng-repeat="data in listar" class="col-lg-4 col-md-6 filter-clothes">
+            <div ng-repeat="data in listar | filter: search" class="col-lg-4 col-md-6 filter-clothes">
               <div class="portfolio-item" id="scroll">
-                <img src="http://localhost/PHP_AngularJS/frontend/{{data.img}}">
+                <img src="http://localhost/PHP_AngularJS/frontend/{{data.img}}" class="hov">
                 <div class="portfolio-info">
                   <h3>
-                    <a class="venobox redicat" id="{{data.nombre}}" title="{{data.nombre}}" data-gall="portfolioGallery">{{data.nombre}}</a>
+                    <a ng-click="details(data.codigo)" class="venobox redicat hov" id="{{data.nombre}}" title="{{data.nombre}}" data-gall="portfolioGallery">{{data.marca}}</a>
                   </h3>
                 </div>
               </div>
               <a>{{data.nombre}}</a>
-              <i class="clico fas fa-heart cora"></i>
+              <i ng-click="favorito()" class="clico fas fa-heart cora"></i>
               <br/>
-              <a>{{data.precio}}</a>
+              <a>{{data.precio}}€</a>
               <i class="cart fas fa-cart-plus carrito"></i>
             </div>
           </div>

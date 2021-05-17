@@ -17,5 +17,29 @@ kiwear.config(['$routeProvider','$locationProvider',function($routeProvider,$loc
             return services.get('shop','listar');
         }
     }
+    }).when("/details", 
+    {templateUrl: "frontend/modules/shop/view/shop_details.html", 
+    controller: "controller_details",
+    resolve: {
+        details: function(services){
+            return services.post('shop','details',{'codigo' : localStorage.codigo});
+        }
+    }
+    }).when("/login", 
+    {templateUrl: "frontend/modules/login/view/login.html", 
+    controller: "controller_login",
+    // resolve: {
+    //     details: function(services){
+    //         return services.post('shop','details',{'codigo' : localStorage.codigo});
+    //     }
+    // }
+    }).when("/register", 
+    {templateUrl: "frontend/modules/login/view/register.html", 
+    controller: "controller_login",
+    // resolve: {
+    //     details: function(services){
+    //         return services.post('shop','details',{'codigo' : localStorage.codigo});
+    //     }
+    // }
     })
 }]);

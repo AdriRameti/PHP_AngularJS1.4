@@ -1,0 +1,29 @@
+<body>
+    <form ng-submit="SendRegister()" class="formulario_register" name="formulario_register" id="formulario_register">
+        <h1>Register</h1>
+        <div class="contenedor_register">
+
+            <div class="input_contenedor">
+                <i class="fas fa-user icono"></i>
+                <input type="text" ng-model="nombre" class="caja_texto" name="nombre" id="nombre" placeholder="Nombre Completo">
+                <a id="error_nombre" class="error_nombre validar"></a>
+            </div>
+
+            <div class="input_contenedor">
+                <i class="fas fa-envelope icono"></i>
+                <input type="text" ng-model="email" class="caja_texto" name="email" id="email" placeholder="Correo Electronico">
+                <a id="error_email" class="error_email validar"></a>
+            </div>
+            
+            <div class="input_contenedor">
+                <i class="fas fa-key icono"></i>
+                <input type="password" ng-model="contrase" class="caja_texto" name="contrase" id="contrase" placeholder="Contraseña">
+                <a id="error_contra" class="error_contrase validar"></a>
+            </div>
+            
+            <input type="submit" ng-click="validateRegister()" value="Registrate" class="boton_register">
+            <p>Al registrarte, aceptas nuestas Condiciones de uso y Políticas de privacidad</p>
+            <p>¿Ya tienes una cuenta?<a class="link_regist" href="#/login">Iniciar Sesion</a></p>
+        </div>
+    </form>
+</body>

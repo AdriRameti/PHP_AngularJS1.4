@@ -51,7 +51,7 @@
   </section><!-- End Hero -->
 
   <main id="main">
-    <input type="text" class="busqueda2" id="busqueda2" placeholder="Busca tu producto aquí"/>
+    <input type="text" ng-model="busqueda"class="busqueda2" placeholder="Busca tu producto aquí"/>
 <!-- ======= Categories Section ======= -->
 <section class="portfolio">
   <div class="container">
@@ -68,12 +68,12 @@
   </div>
 <!-- <div id="categories"></div> -->
 <div class="row portfolio-container" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
-  <div ng-repeat="data in categories" class="col-lg-4 col-md-6 filter-clothes">
+  <div ng-repeat="data in categories | filter: busqueda" class="col-lg-4 col-md-6 filter-clothes">
     <div class="portfolio-item" id="scroll">
-      <img src="http://localhost/PHP_AngularJS/frontend/{{data.img}}">
+      <img ng-click="rediShop(data.nombre)" src="http://localhost/PHP_AngularJS/frontend/{{data.img}}" id="{{data.nombre}}" class="hov">
       <div class="portfolio-info">
         <h3>
-          <a ng-click="rediShop(data.nombre)" class="venobox redicat" id="{{data.nombre}}" title="{{data.nombre}}" data-gall="portfolioGallery">{{data.nombre}}</a>
+          <a ng-click="rediShop(data.nombre)" class="venobox redicat hov" id="{{data.nombre}}" title="{{data.nombre}}" data-gall="portfolioGallery">{{data.nombre}}</a>
         </h3>
       </div>
     </div>

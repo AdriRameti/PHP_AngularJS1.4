@@ -43,6 +43,14 @@ class shop_dao{
         $stmt = $db->ejecutar($sql);
         return $db->listar($stmt);
     }
+    public function select_filters2($db,$arryArguments){
+        $marca = $arryArguments[0];
+        $talla = $arryArguments[1];
+        $offset = $arryArguments[2];
+        $sql = "SELECT codigo,nombre,marca,img,precio FROM ropa WHERE marca='$marca' OR talla='$talla' order by visitas DESC LIMIT $offset,3";
+        $stmt = $db->ejecutar($sql);
+        return $db->listar($stmt);
+    }
     public function select_search($db,$arryArguments){
         $consulta = $arryArguments[0];
         $nom = $arryArguments[1];

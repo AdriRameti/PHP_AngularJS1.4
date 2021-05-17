@@ -129,8 +129,6 @@ function show_logins(){
         $('#login_views1').empty(); 
         $('<form></form>').attr('class','formulario_register log1').attr('name','formulario_login').attr('id','formulario_login').appendTo('#login_views1');
         $('<h1>Login</h1>').appendTo('.log1');
-        // $('<i></i>').attr('class','fab fa-google-plus-square icono2').appendTo('.log1');
-        // $('<i></i>').attr('class','fab fa-github-square icono2').appendTo('.log1');
         $('<img></img>').attr('class','imgLog google').attr('id','google').attr('src','http://localhost/FrameworkPHP/view/img/google.png').appendTo('.log1');
         $('<img></img>').attr('class','imgLog github').attr('src','http://localhost/FrameworkPHP/view/img/github.png').appendTo('.log1');
         $('<div></div>').attr('class','contenedor_register log2').appendTo('.log1');

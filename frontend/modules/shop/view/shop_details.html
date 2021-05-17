@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <div ng-repeat="data in details" class="fila">
+        <div class="columna">
+            <img src="http://localhost/PHP_AngularJS/frontend/{{data.img1}}">
+        </div>
+        <div class="columna">
+            <img src="http://localhost/PHP_AngularJS/frontend/{{data.img2}}">
+        </div>
+        <div class="columna2">
+            <div>
+                <div>
+                    <a href="#/shop">Volver</a>
+                    <h1>{{data.marca}}</h1>
+                    <div class="info">
+                        <p>{{data.descripcion}}</p>
+                        <p>{{data.precio}}€</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <p><a href="#información" class="vinculos">Más información</a></p>
+                <p><a href="#infoEnv" class="vinculos">Envio</a></p>
+            </div>
+            <div>
+                <span class="Button_green2" value="S">{{data.talla1}}</span>
+                <span class="Button_green2" value="M">{{data.talla2}}</span>
+                <span class="Button_green2" value="L">{{data.talla3}}</span>
+                <span class="Button_green2" value="XL">{{data.talla4}}</span>
+            </div>
+            <div>
+                <div class="botonesShop">
+                    <a class="botones">Añadir al carrito</a>
+                </div>
+                <br/>
+                <div class="botonesShop1">
+                    <a class="botones2">Favoritos</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-repeat="data in details" class="fila">
+        <div class="columna">
+            <img src="http://localhost/PHP_AngularJS/frontend/{{data.img3}}">
+        </div>
+        <div class="columna">
+            <img src="http://localhost/PHP_AngularJS/frontend/{{data.img4}}"> 
+        </div>
+        <br/>
+    </div>
+    <div ng-repeat="data in details" class="filaUlt">
+        <div>
+            <details open='' class="detalles">
+                <summary>Descripción</summary>
+                <div>
+                    <p><a name="informacion">{{data.descriptotal}}</a></p>
+                </div>
+                <br/>
+            </details>
+        </div>
+        <div>
+            <details open='' class="detalles">
+                <summary>Envíos y devoluciones</summary>
+                <div>
+                    <p>
+                        <select>
+                            <option>España</option>
+                            <option>Italia</option>
+                            <option>Reino Unido</option>
+                            <option>Alemania</option>
+                            <option>Estados Unidos</option>
+                            <option>China</option>
+                            <option>Paises Bajos</option>
+                            <option>Rusia</option>
+                            <option>Japón</option>
+                            <option>Brasil</option>
+                            <option>Argentina</option>
+                            <option>Canada</option>
+                            <option>Bélgica</option>
+                            <option>Bahamas</option>
+                            <option>México</option>
+                            <option>Francia</option>
+                        </select>
+                    </p>
+                </div>
+                <div class="infoEnv">
+                    <a name="infoEnv" class="informacionE">Envios gratis con GLS, con la fecha de entrega estimada en el artículo</a>
+                    <ul>
+                        <li>
+                            <a>Gratis para pedidos de 50€ o más</a>
+                        </li>
+                        <li>
+                            <a>3€ para pedidos inferiores a 50€</a>
+                        </li>
+                        <li>
+                            <a>5€ para pedidos con envío Express</a>
+                        </li>
+                        <a class="textJust">Tienes 14 días para hacer devoluciones desde que recibes el producto. Ampliación del plazo de devolución durante el periodo de fiestas: 
+                            Todos los pedidos realizados entre el 9 de diciembre de 2020 y el 5 de enero de 2021 podrán devolverse hasta el 19 de enero de 2021.</a>
+                    </ul>
+                </div>
+            </details>
+        </div>
+        <div>
+            <details open='' class="detallesApi">
+                <summary>Productos de tu interes</summary>
+            </details>
+        </div>
+    </div>
+</body>
+</html>

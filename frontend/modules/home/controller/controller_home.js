@@ -1,7 +1,6 @@
 kiwear.controller('controller_home', function($scope,$window,categories) {
     let cat =3;
     let total = categories.length;
-
     $scope.categories = categories.slice(0, cat);
 
     angular.element($window).on('mousewheel',function(){

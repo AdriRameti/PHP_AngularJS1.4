@@ -32,6 +32,9 @@ class shop_bll{
     public function filters($arryArguments){
         return $this->dao->select_filters($this->db,$arryArguments);
     }
+    public function filters2($arryArguments){
+        return $this->dao->select_filters2($this->db,$arryArguments);
+    }
     public function search($arryArguments){
         return $this->dao->select_search($this->db,$arryArguments);
     }

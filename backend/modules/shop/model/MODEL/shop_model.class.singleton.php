@@ -30,6 +30,9 @@ class shop_model {
     public function filters($arryArguments){
         return $this->bll->filters($arryArguments);
     }
+    public function filters2($arryArguments){
+        return $this->bll->filters2($arryArguments);
+    }
     public function search($arryArguments){
         return $this->bll->search($arryArguments);
     }

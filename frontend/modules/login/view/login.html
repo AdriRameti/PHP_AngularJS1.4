@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <!-- <div id="login_views"></div> -->
+    <form ng-submit="Send()" class="formulario_register" name="formulario_login" id="formulario_login">
+        <h1>Login</h1>
+        <img src="http://localhost/FrameworkPHP/view/img/google.png" class="imgLog" id="google">
+        <img src="http://localhost/FrameworkPHP/view/img/github.png" class="imgLog">
+        <div class="contenedor_register">
+                   
+            <div class="input_contenedor">
+                <i class="fas fa-envelope icono"></i>
+                <input type="text" ng-model="email" name="email" id="email" class="caja_texto" placeholder="Correo Electronico">
+                <a id="error_email" class="error_email validar"></a>
+            </div>
+            
+            <div class="input_contenedor">
+                <i class="fas fa-key icono"></i>
+                <input type="password" ng-model="contrase" name="contrase" id="contrase" class="caja_texto" placeholder="Contraseña">
+                <a id="error_contra" class="error_contra validar"></a>
+            </div>
+            
+            <input type="submit"  ng-click="validateLogin()" value="Login" class="boton_register">
+            <p>Al registrarte, aceptas nuestas Condiciones de uso y Políticas de privacidad</p>
+            <p>¿No tienes una cuenta?<a class="link_regist" href="#/register">Registrate</a></p>
+        </div>
+    </form>
+</body>
+</html>

@@ -3,6 +3,9 @@
 	padding: 0px;
 	box-sizing: border-box;
 }
+.hov:hover{
+cursor: pointer;
+}
 /*******************************************************************************************/
 /*****************************CARRITO******************************************************/
 .container-table{
@@ -48,14 +51,14 @@
 	cursor: pointer;
 }
 /***********************************************************/
-#busqueda2{
-	position: absolute;
-	left: 650px;;
-	width: 30%;
+.busqueda2{
+	position: relative;
+	left: 35%;;
+	width: 25% !important;
 	height: 40px;
-	line-height: 40px;
+	/* line-height: 40px;
 	background:rgb(193, 230, 243);
-	padding: 0 20px;
+	padding: 0 20px; */
 	/* border-radius: 100px;
 	border: none; */
 	text-align: center;
@@ -145,8 +148,8 @@ input[type="password"]{
 	color: #999;
 }
 .imgLog{
-	width: 75;
-	height: 50;
+	width: 15%;
+	height: 15%;
 }
 .imgLog:hover{
 	cursor: pointer;
@@ -335,14 +338,16 @@ header  .formBusc{
 	margin-bottom: 20px;
 }
 header .busqueda{
-	width: 30%;
+	width: 35%;
 	height: 40px;
-	line-height: 40px;
-	background:rgb(193, 230, 243);
+	/* line-height: 40px;
+	background:rgb(210, 241, 252);
 	padding: 0 20px;
 	text-align: center;
-	font-size: 16px;
+	font-size: 16px; */
+	z-index: 2;
 }
+
 
 /*********************************************************************/
 /**************************DETAILS************************************/

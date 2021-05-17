@@ -36,10 +36,10 @@ class controller_shop{
         echo json_encode($json);
     }
     public function filters(){
-        $nom = $_POST['nom'];
-        $marcas = $_POST['marcas'];
-        $tallas = $_POST['tallas'];
-        $offset = $_POST['offset'];
+        $nom = $_POST['nombre'];
+        $marcas = $_POST['marca'];
+        $tallas = $_POST['talla'];
+        $offset = 0;
         $array = array();
         array_push($array, $nom);
         array_push($array, $marcas);
@@ -47,6 +47,18 @@ class controller_shop{
         array_push($array ,$offset);
         $json = array();
         $json = Content::LoadModel(MODEL_MODEL_SHOP,"shop_model","filters",$array);
+        echo json_encode($json);
+    }
+    public function filters2(){
+        $marcas = $_POST['marca'];
+        $tallas = $_POST['talla'];
+        $offset = 0;
+        $array = array();
+        array_push($array, $marcas);
+        array_push($array ,$tallas);
+        array_push($array ,$offset);
+        $json = array();
+        $json = Content::LoadModel(MODEL_MODEL_SHOP,"shop_model","filters2",$array);
         echo json_encode($json);
     }
     public function search(){
