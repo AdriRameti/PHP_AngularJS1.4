@@ -28,18 +28,16 @@ kiwear.config(['$routeProvider','$locationProvider',function($routeProvider,$loc
     }).when("/login", 
     {templateUrl: "frontend/modules/login/view/login.html", 
     controller: "controller_login",
-    // resolve: {
-    //     details: function(services){
-    //         return services.post('shop','details',{'codigo' : localStorage.codigo});
-    //     }
-    // }
+
     }).when("/register", 
     {templateUrl: "frontend/modules/login/view/register.html", 
     controller: "controller_login",
-    // resolve: {
-    //     details: function(services){
-    //         return services.post('shop','details',{'codigo' : localStorage.codigo});
-    //     }
-    // }
+
+    }).when("/login/verifyUser/:tokenVerify/:emailClient", 
+    {templateUrl: "frontend/modules/login/view/login.html", 
+    controller: "controller_login",
+    resolve:{
+        
+    }
     })
 }]);

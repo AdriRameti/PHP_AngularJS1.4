@@ -1,11 +1,11 @@
 <?php
 class controller_login{
-    public function list(){
-        require INC_PATH."header.php";
-        require INC_PATH."menu.html";
-        Content::LoadView("login","login");
-        include (INC_PATH."footer.php");
-    }
+    // public function list(){
+    //     require INC_PATH."header.php";
+    //     require INC_PATH."menu.html";
+    //     Content::LoadView("login","login");
+    //     include (INC_PATH."footer.php");
+    // }
     public function recoverView(){
         require INC_PATH."header.php";
         require INC_PATH."menu.html";
@@ -46,7 +46,7 @@ class controller_login{
         echo json_encode($json);
     }
     public function verify(){
-        $mailClient = $_POST['email'];
+        $mailClient = $_POST['correo'];
         $tokenVerify = Content::loadModel(MODEL_MODEL_LOGIN,"login_model","tokenVerify",$mailClient);
         $type = 'alta';
         $message = 'Para activar su cuenta en KIWEAR pulse en el siguiente enlace';
@@ -62,18 +62,18 @@ class controller_login{
         echo json_encode($json);
     }
     public function verify_user(){
-        header("Location: http://localhost/FrameworkPHP/login/list");
-        $tokenVeri = $_GET['param'];
-        $correo = $_GET['param2'];
-        $arryArguments = array();
-        array_push($arryArguments,$tokenVeri);
-        array_push($arryArguments,$correo);
-        if ($tokenVeri && $correo){
-            $json = array();
-            $json = Content::LoadModel(MODEL_MODEL_LOGIN,"login_model","verifyUser",$arryArguments);
-        }
+        // header("Location: http://localhost/PHP_AngularJS/#/login");
+        // $tokenVeri = $_GET['param'];
+        // $correo = $_GET['param2'];
+        // $arryArguments = array();
+        // array_push($arryArguments,$tokenVeri);
+        // array_push($arryArguments,$correo);
+        // if ($tokenVeri && $correo){
+        //     $json = array();
+        //     $json = Content::LoadModel(MODEL_MODEL_LOGIN,"login_model","verifyUser",$arryArguments);
+        // }
         
-        echo $json;
+        echo 'holaa';
     }
     public function recover(){
         $email = $_POST['email'];

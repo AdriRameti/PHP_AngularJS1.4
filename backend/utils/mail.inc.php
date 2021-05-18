@@ -17,7 +17,7 @@ class Mail{
         switch ($type){
             case 'alta':
                 $subject = 'Tu alta en KIWEAR SHOP';
-                $ruta = "<a href='http://localhost/FrameworkPHP/login/verify_user/".$tokenVerify."/".$emailClient."'>Pulsa aquí</a>";
+                $ruta = "<a href='http://localhost/PHP_AngularJS/#/login/verify_user/".$tokenVerify."/".$emailClient."'>Pulsa aquí</a>";
                 $body = 'Gracias por unirte a la familia KIWE.<br> Para finalizar el registro pulsa'.$ruta;
             break;
             case 'recover':

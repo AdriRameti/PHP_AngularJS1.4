@@ -293,7 +293,7 @@ function register(){
                 data: data,
                 url: ruta,
                 success:(function(respuesta){
-                    var email = respuesta.replace(/['"]+/g, '')
+                    var email = respuesta.replace(/['"]+/g, '');
                     var data2 = {email:email};
                     var url2 = '?page=login&op=verify';
                     if(respuesta==1){

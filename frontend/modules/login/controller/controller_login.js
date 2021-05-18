@@ -81,11 +81,18 @@ kiwear.controller('controller_login', function($scope,services) {
                 var name = $scope.nombre;
                 var email = $scope.email;
                 var contra = $scope.contrase;
-                console.log(name);
-                // datos =  services.post('login','register',{email:email,contrase:contrase}).then(function(data) {
-                //     localStorage.token = data;
-                //     console.log(data);
-                // });
+                datos =  services.post('login','register',{nombre:name,email:email,contrase:contra}).then(function(data) {
+                    var correo = data.replace(/['"]+/g, '');
+                    // console.log(email);
+                    if (data==1){
+                        document.getElementById('error_usuario').innerHTML="*Ya existe este usuario";
+                        document.formulario_register.email.focus();
+                    }else{
+                        respuesta =  services.post('login','verify',{correo:correo}).then(function(res) {
+                            console.log(res);
+                        });
+                    }
+                });
             }
 
         }
