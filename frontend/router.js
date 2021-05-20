@@ -37,7 +37,17 @@ kiwear.config(['$routeProvider','$locationProvider',function($routeProvider,$loc
     {templateUrl: "frontend/modules/login/view/login.html", 
     controller: "controller_login",
     resolve:{
-        
+        activateUser: function(services,$route){
+            var tokenV = $route.current.params.tokenVerify;
+            var emailCli = $route.current.params.emailClient;
+            localStorage.setItem('tokenV',tokenV);
+            localStorage.setItem('emailCli',emailCli);
+            window.location.href="http://localhost/PHP_AangularJS/#/login";
+        }
     }
+    }).when("/login/recover", 
+    {templateUrl: "frontend/modules/login/view/recover.html", 
+    controller: "controller_login",
+
     })
 }]);

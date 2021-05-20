@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <body>
-    <form class="formulario_register" name="formulario_recover" id="formulario_recover">
+    <form ng-sumbit="recov()" class="formulario_register" name="formulario_recover" id="formulario_recover">
         <h1>Recuperar Contraseña</h1>
         <div class="contenedor_register">
             <div class="input_contenedor">
                 <i class="fas fa-envelope icono"></i>
-                <input type="text" id="email" name="email" placeholder="Correo Electronico" class="caja_texto"></input>
+                <input ng-model="email" type="text" id="email" name="email" placeholder="Correo Electronico" class="caja_texto"></input>
                 <br/>
                 <a id="error_email" class="error_email validar"></a>
             </div>
             <div class="input_contenedor">
                 <i  class="fas fa-key icono"></i>
-                <input type="password" id="contrase" name="contrase" placeholder="Contraseña Nueva" class="caja_texto"></input>
+                <input type="password" ng-model="contrase" id="contrase" name="contrase" placeholder="Contraseña Nueva" class="caja_texto"></input>
                 <br/>
                 <span id="error_contra" class="error_contra validar"></span>
             </div>
             <div class="input_contenedor">
                 <i  class="fas fa-key icono"></i>
-                <input type="password" id="NewContrase" name="NewContrase" placeholder="Repite Contraseña Nueva" class="caja_texto"></input>
+                <input type="password" ng-model="NewContrase" id="NewContrase" name="NewContrase" placeholder="Repite Contraseña Nueva" class="caja_texto"></input>
                 <br/>
-                <span id="error_contra" class="error_contra validar"></span>
+                <span id="error_contra2" class="error_contra2 validar"></span>
             </div>
-            <input type="button" value="confirmar" class="boton_register" id="btn_recover"></input>
+            <input type="submit" ng-click="validaRecover()" value="confirmar" class="boton_register" id="btn_recover"></input>
             <p>
                 ¿Ya tienes una cuenta?
                 <a class="link_regist logeo">Iniciar Sesion</a>

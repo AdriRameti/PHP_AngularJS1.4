@@ -62,18 +62,18 @@ class controller_login{
         echo json_encode($json);
     }
     public function verify_user(){
-        // header("Location: http://localhost/PHP_AngularJS/#/login");
-        // $tokenVeri = $_GET['param'];
-        // $correo = $_GET['param2'];
-        // $arryArguments = array();
-        // array_push($arryArguments,$tokenVeri);
-        // array_push($arryArguments,$correo);
-        // if ($tokenVeri && $correo){
-        //     $json = array();
-        //     $json = Content::LoadModel(MODEL_MODEL_LOGIN,"login_model","verifyUser",$arryArguments);
-        // }
+        header("Location: http://localhost/PHP_AngularJS/#/login");
+        $tokenVeri = $_GET['param'];
+        $correo = $_GET['param2'];
+        $arryArguments = array();
+        array_push($arryArguments,$tokenVeri);
+        array_push($arryArguments,$correo);
+        if ($tokenVeri && $correo){
+            $json = array();
+            $json = Content::LoadModel(MODEL_MODEL_LOGIN,"login_model","verifyUser",$arryArguments);
+        }
         
-        echo 'holaa';
+        echo $json;
     }
     public function recover(){
         $email = $_POST['email'];

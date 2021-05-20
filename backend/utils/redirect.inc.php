@@ -17,24 +17,7 @@ class redirection{
         // $met = $this-> getOption();
 
         call_user_func(array($this->loadPage(),$this->loadFunc()));
-        // try{
-        //     $action = router::getAction($url); //Obtenemos la accion del router a partir de la pagina que hemos obtenido ($url);
 
-        //     $controllerName = $action["controller"];
-        //     // $method= $action["method"];
-
-        //    $option = router::getFunction($url,$met);
-
-        //    $method = $option["metodo"];
-        //     require MODULES_PATH.$url."/controller/".$controllerName.".class.php";
-
-        //     $controller = new $controllerName(); //Instanciamos el controlador
-
-        //     $controller->$method(); //Llamamos al metodo del controlador
-        // }catch(Exception $e){
-        //     Content::loadError();
-            
-        // }
     }
     public function loadPage(){
         $url = $this-> getUrl();

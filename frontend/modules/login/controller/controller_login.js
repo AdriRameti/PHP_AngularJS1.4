@@ -1,4 +1,7 @@
 kiwear.controller('controller_login', function($scope,services) {
+    var tokV = localStorage.getItem('tokenV');
+    var emailCLi = localStorage.getItem('emailCli');
+    console.log(tokV,emailCLi);
     $scope.validateLogin = function(){
         var valida_email = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
         var confEm = 0;
@@ -95,6 +98,54 @@ kiwear.controller('controller_login', function($scope,services) {
                 });
             }
 
+        }
+    }
+    $scope.validaRecover = function(){
+        var confEmail =0;
+        var confContra = 0;
+        var confNewContra = 0;
+        if(document.formulario_recover.email.value.length==0){
+            document.getElementById('error_email').innerHTML="*Introduzca su correo electrónico";
+            document.formulario_recover.email.focus();
+            return 0;
+            
+        }else if(document.formulario_recover.email.value.length!=0){
+            document.getElementById('error_email').innerHTML="";
+            confEmail = 1;
+        }
+        if(!valida_email.test(document.formulario_recover.email.value)){
+            document.getElementById('error_email').innerHTML="*El formato del correo electrónico es incorrecto";
+            document.formulario_recover.email.focus();
+            return 0;
+        }
+        if(document.formulario_recover.contrase.value.length==0){
+            document.getElementById('error_contra').innerHTML="*Introduzca una contraseña segura";
+            document.formulario_recover.contrase.focus();
+            return 0;
+            
+        }else if(document.formulario_recover.contrase.value.length!=0){
+            document.getElementById('error_contra').innerHTML="";
+            confContra = 1;
+        }
+        if(document.formulario_recover.NewContrase.value.length==0){
+            document.getElementById('error_contra2').innerHTML="*Introduzca una contraseña segura";
+            document.formulario_recover.contrase.focus();
+            return 0;
+            
+        }else if(document.formulario_recover.NewContrase.value.length!=0){
+            document.getElementById('error_contra2').innerHTML="";
+            confContra = 1;
+        }
+        if (document.formulario_recover.NewContrase.value == document.formulario_recover.contrase.value){
+            document.getElementById('error_contra2').innerHTML="*Las contraseñas no coinciden";
+            document.formulario_recover.contrase.focus();
+            return 0;
+        }
+
+        if(confEmail==1 && confContra==1 && confNewContra==1){
+            $scope.recov = function(){
+                var email = $scope.email;
+            }
         }
     }
 });
