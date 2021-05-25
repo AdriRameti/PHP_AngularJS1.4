@@ -93,37 +93,7 @@ function login_view(){
 });
     
 }
-function recover(){
-    $(document).on('click','.recover',function(){;
-        $('#login_views1').empty();
-        $('<form></form>').attr('class','formulario_register log1').attr('name','formulario_recover1').attr('id','formulario_recover1').appendTo('#login_views1');
-        $('<h1>Recuperar Contraseña</h1>').appendTo('.log1');
-        $('<div></div>').attr('class','contenedor_register log2').appendTo('.log1');
-        $('<div></div>').attr('class','input_contenedor log3').appendTo('.log2');
-        $('<i></i>').attr('class','fas fa-envelope icono').appendTo('.log3');
-        $('<input></input>').attr('type','text').attr('id','email').attr('name','email').attr('placeholder','Correo Electrónico').attr('class','caja_texto').appendTo('.log3');
-        $('<br></br>').appendTo('.log3');
-        $('<a></a>').attr('id','error_email').attr('class','error_email validar').appendTo('.log3');
-        $('<input></input>').attr('type','button').attr('value','Confirmar').attr('class','boton_register').attr('id','btn_recov').appendTo('.log2'); 
-        $(document).on('click','#btn_recov',function(){;
-            var url = '?page=login&op=recover';
-            friendlyURL(url).then(function(ruta){
-                var data = $('#formulario_recover1').serialize(); 
-                $.ajax({
-                    type:'POST',
-                    data: data,
-                    url: ruta,
-                    success:(function(data){
-                        // alert(data);
-                        window.location.href="/FrameworkPHP/login/list";
-                        
 
-                    })
-                });
-            });
-        });
-    });
-}
 function show_logins(){
     $(document).on('click','.logeo',function(){;
         $('#login_views1').empty(); 
@@ -221,7 +191,6 @@ function social_google(){
       var authService = firebase.auth();
 
       $(document).on('click','.google',function(){
-        alert('entro click');
         authService.signInWithPopup(provider)
               .then(function(result) {
                 var url = '?page=login&op=socialGoogle';
@@ -354,6 +323,37 @@ function login(){
         });
         }
         
+    });
+}
+function recover(){
+    $(document).on('click','.recover',function(){;
+        $('#login_views1').empty();
+        $('<form></form>').attr('class','formulario_register log1').attr('name','formulario_recover1').attr('id','formulario_recover1').appendTo('#login_views1');
+        $('<h1>Recuperar Contraseña</h1>').appendTo('.log1');
+        $('<div></div>').attr('class','contenedor_register log2').appendTo('.log1');
+        $('<div></div>').attr('class','input_contenedor log3').appendTo('.log2');
+        $('<i></i>').attr('class','fas fa-envelope icono').appendTo('.log3');
+        $('<input></input>').attr('type','text').attr('id','email').attr('name','email').attr('placeholder','Correo Electrónico').attr('class','caja_texto').appendTo('.log3');
+        $('<br></br>').appendTo('.log3');
+        $('<a></a>').attr('id','error_email').attr('class','error_email validar').appendTo('.log3');
+        $('<input></input>').attr('type','button').attr('value','Confirmar').attr('class','boton_register').attr('id','btn_recov').appendTo('.log2'); 
+        $(document).on('click','#btn_recov',function(){;
+            var url = '?page=login&op=recover';
+            friendlyURL(url).then(function(ruta){
+                var data = $('#formulario_recover1').serialize(); 
+                $.ajax({
+                    type:'POST',
+                    data: data,
+                    url: ruta,
+                    success:(function(data){
+                        // alert(data);
+                        window.location.href="/FrameworkPHP/login/list";
+                        
+
+                    })
+                });
+            });
+        });
     });
 }
 function recoverPass(){

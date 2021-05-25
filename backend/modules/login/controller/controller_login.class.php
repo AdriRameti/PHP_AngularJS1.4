@@ -62,9 +62,9 @@ class controller_login{
         echo json_encode($json);
     }
     public function verify_user(){
-        header("Location: http://localhost/PHP_AngularJS/#/login");
-        $tokenVeri = $_GET['param'];
-        $correo = $_GET['param2'];
+        // header("Location: http://localhost/PHP_AngularJS/#/login");
+        $tokenVeri = $_POST['tokV'];
+        $correo = $_POST['emailCli'];
         $arryArguments = array();
         array_push($arryArguments,$tokenVeri);
         array_push($arryArguments,$correo);

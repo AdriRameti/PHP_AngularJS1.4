@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <form ng-submit="recoverPass()" class="formulario_register" name="formulario_recover1" id="formulario_recover1">
+        <h1>Recuperar Contraseña</h1>
+        <div class="contenedor_register">
+            <div class="input_contenedor">
+                <i class="fas fa-envelope icono"></i>
+                <input ng-model="email" type="text" id="email" name="email" placeholder="Correo Electronico" class="caja_texto"></input>
+                <br/>
+                <a id="error_email" class="error_email validar"></a>
+            </div>
+            <input type="submit" ng-click="validaRecover1()" value="confirmar" class="boton_register" id="btn_recov"></input>
+        </div>
+    </form> 
+</body>
+</html>

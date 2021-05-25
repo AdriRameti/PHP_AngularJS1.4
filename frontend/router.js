@@ -33,21 +33,35 @@ kiwear.config(['$routeProvider','$locationProvider',function($routeProvider,$loc
     {templateUrl: "frontend/modules/login/view/register.html", 
     controller: "controller_login",
 
-    }).when("/login/verifyUser/:tokenVerify/:emailClient", 
-    {templateUrl: "frontend/modules/login/view/login.html", 
-    controller: "controller_login",
+    }).when("/login/verify_user/:tokenVerify/:emailClient", 
+    { controller: "controller_login",
     resolve:{
         activateUser: function(services,$route){
-            var tokenV = $route.current.params.tokenVerify;
+            var tokV = $route.current.params.tokenVerify;
             var emailCli = $route.current.params.emailClient;
-            localStorage.setItem('tokenV',tokenV);
-            localStorage.setItem('emailCli',emailCli);
-            window.location.href="http://localhost/PHP_AangularJS/#/login";
+            if (tokV || emailCli){
+                verificar = services.post('login','verify_user',{emailCli:emailCli,tokV:tokV}).then(function(resultado) {
+                        localStorage.removeItem('tokenV');
+                        localStorage.removeItem('emailCli');
+                        return location.href="http://localhost/PHP_AngularJS/#/login"
+                    });
+            }
         }
     }
+    }).when("/login/confirm", 
+    {templateUrl: "frontend/modules/login/view/verify.html", 
+    controller: "controller_login",
+
     }).when("/login/recover", 
     {templateUrl: "frontend/modules/login/view/recover.html", 
     controller: "controller_login",
-
+        
     })
 }]);
+kiwear.run(function($rootScope,logInServices){
+    logInServices.loadMenu();
+
+    $rootScope.logOut = function(){
+        logInServices.logOut();
+    }
+});

@@ -1,7 +1,4 @@
 kiwear.controller('controller_login', function($scope,services) {
-    var tokV = localStorage.getItem('tokenV');
-    var emailCLi = localStorage.getItem('emailCli');
-    console.log(tokV,emailCLi);
     $scope.validateLogin = function(){
         var valida_email = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
         var confEm = 0;
@@ -36,7 +33,8 @@ kiwear.controller('controller_login', function($scope,services) {
                 var contrase = $scope.contrase;
                 datos =  services.post('login','login',{email:email,contrase:contrase}).then(function(data) {
                     localStorage.token = data;
-                    console.log(data);
+                    console.log(localStorage.token);
+                    location.href="http://localhost/PHP_AngularJS/#/home"
                 });
             }
             
@@ -104,6 +102,7 @@ kiwear.controller('controller_login', function($scope,services) {
         var confEmail =0;
         var confContra = 0;
         var confNewContra = 0;
+        var valida_email = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
         if(document.formulario_recover.email.value.length==0){
             document.getElementById('error_email').innerHTML="*Introduzca su correo electrónico";
             document.formulario_recover.email.focus();
@@ -134,18 +133,121 @@ kiwear.controller('controller_login', function($scope,services) {
             
         }else if(document.formulario_recover.NewContrase.value.length!=0){
             document.getElementById('error_contra2').innerHTML="";
-            confContra = 1;
+            confNewContra = 1;
         }
-        if (document.formulario_recover.NewContrase.value == document.formulario_recover.contrase.value){
+        if (document.formulario_recover.NewContrase.value != document.formulario_recover.contrase.value){
             document.getElementById('error_contra2').innerHTML="*Las contraseñas no coinciden";
             document.formulario_recover.contrase.focus();
             return 0;
         }
 
         if(confEmail==1 && confContra==1 && confNewContra==1){
+            console.log(123321);
             $scope.recov = function(){
                 var email = $scope.email;
+                var NewContrase = $scope.NewContrase;
+
+                update = services.post('login','recover_password',{email:email,NewContrase:NewContrase}).then(function(data){
+                    console.log(data);
+                    location.href="http://localhost/PHP_AngularJS/#/login"
+                });
             }
         }
     }
+    $scope.validaRecover1 = function(){
+        var valida_email = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
+        var confEmail =0;
+        if(document.formulario_recover1.email.value.length==0){
+            document.getElementById('error_email').innerHTML="*Introduzca su correo electrónico";
+            document.formulario_recover1.email.focus();
+            return 0;
+            
+        }else if(document.formulario_recover1.email.value.length!=0){
+            document.getElementById('error_email').innerHTML="";
+            confEmail = 1;
+        }
+        if(!valida_email.test(document.formulario_recover1.email.value)){
+            document.getElementById('error_email').innerHTML="*El formato del correo electrónico es incorrecto";
+            document.formulario_recover1.email.focus();
+            return 0;
+        }
+
+        if(confEmail == 1){
+            $scope.recoverPass = function(){
+                var email = $scope.email;
+                console.log(email);
+                sendEmail = services.post('login','recover',{email:email}).then(function(dat){
+                    console.log(dat);
+                });
+            }
+
+        }
+    }
+    $scope.SlGoogle = function(){
+        var config = {
+            apiKey: "AIzaSyChqlIprL8ibgAoaP6pl3F4BfWw4QmJWZM",
+            authDomain: "kiwear-be9f5.firebaseapp.com",
+            databaseURL: "https://kiwear-be9f5.firebaseio.com",
+            projectId: "kiwear-be9f5",
+            storageBucket: "",
+            messagingSenderId: "87488149386"
+          };
+          firebase.initializeApp(config);
+            
+          var provider = new firebase.auth.GoogleAuthProvider();
+          provider.addScope('email');
+      
+          var authService = firebase.auth();
+          authService.signInWithPopup(provider)
+          .then(function(result) {
+            var email = result.user.email;
+            var name = result.user.displayName;
+            var id = result.user.uid;
+
+            insertar = services.post('login','socialGoogle',{email:email,name:name,id:id}).then(function(data){
+                console.log(data);
+                var token = data;
+                localStorage.setItem('token',token);
+            });
+          })
+          .catch(function(error) {
+              console.log('Se ha encontrado un error:', error);
+          })
+    }
+    $scope.SlGithub = function(){
+        var config = {
+            apiKey: "AIzaSyChqlIprL8ibgAoaP6pl3F4BfWw4QmJWZM",
+            authDomain: "kiwear-be9f5.firebaseapp.com",
+            databaseURL: "https://kiwear-be9f5.firebaseio.com",
+            projectId: "kiwear-be9f5",
+            storageBucket: "",
+            messagingSenderId: "87488149386"
+          };
+          firebase.initializeApp(config);
+          var provider = new firebase.auth.GithubAuthProvider();
+          var authService = firebase.auth();
+          authService.signInWithPopup(provider)
+        .then(function(result) {
+            // var url = '?page=login&op=socialGit';
+            var email = result.user.email;
+            var name = result.user.displayName;
+            var id = result.user.uid;
+            // var data = {
+            //     email:email,
+            //     name:name,
+            //     id:id
+            // };
+            console.log(email,name,id);
+        }).catch(function(error) {
+          var errorCode = error.code;
+          console.log(errorCode);
+          var errorMessage = error.message;
+          console.log(errorMessage);
+          var email = error.email;
+          console.log(email);
+          var credential = error.credential;
+          console.log(credential);
+        });
+    }
+
 });

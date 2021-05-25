@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <body>
-    <form ng-sumbit="recov()" class="formulario_register" name="formulario_recover" id="formulario_recover">
+    <form ng-submit="recov()" class="formulario_register" name="formulario_recover" id="formulario_recover">
         <h1>Recuperar Contraseña</h1>
         <div class="contenedor_register">
             <div class="input_contenedor">
@@ -25,7 +25,7 @@
             <input type="submit" ng-click="validaRecover()" value="confirmar" class="boton_register" id="btn_recover"></input>
             <p>
                 ¿Ya tienes una cuenta?
-                <a class="link_regist logeo">Iniciar Sesion</a>
+                <a class="link_regist logeo" href="#/login">Iniciar Sesion</a>
             </p>
         </div>
     </form>

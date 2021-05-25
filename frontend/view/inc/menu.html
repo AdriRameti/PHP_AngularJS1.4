@@ -39,9 +39,16 @@
           <a href="#/login">
             <i class="fas fa-user-plus icono_login"></i>
           </a>
-          <ul class='usuario'>
+          <ul class='usuario' ng-show="userCard">
             <li>
-            <a>Log Out
+              <a>
+                <span>
+                  <img>
+                </span>
+              </a>
+            </li>
+            <li>
+            <a ng-click="logOut()">Log Out
               <span>
                 <i class="fas fa-user-times"></i>
               </span>

@@ -22,7 +22,7 @@ class Mail{
             break;
             case 'recover':
                 $subject = 'Cambia tu contraseña de KIWEAR SHOP';
-                $ruta = "<a href='http://localhost/FrameworkPHP/login/recoverView'>Pulsa aquí</a>";
+                $ruta = "<a href='http://localhost/PHP_AngularJS/#/login/recover'>Pulsa aquí</a>";
                 $body = 'Regresa a la pagina para actualizar su contraseña.Para ello '.$ruta;
             break;
         }

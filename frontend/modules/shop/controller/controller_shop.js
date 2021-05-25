@@ -128,6 +128,11 @@ $scope.removeFilters = function(){
     
 }
 $scope.favorito = function(){
-    window.location.href="#/login";
+    if(localStorage.getItem('token')){
+
+    }else{
+        window.location.href="#/login";
+    }
+    
 }
 });

@@ -205,5 +205,5 @@ function load_funciones(){
 // // friendlyURL();
 // });
 window.addEventListener('load', function(){
-    load_funciones();
+    // load_funciones();
 });
