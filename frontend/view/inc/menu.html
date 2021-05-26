@@ -39,11 +39,12 @@
           <a href="#/login">
             <i class="fas fa-user-plus icono_login"></i>
           </a>
-          <ul class='usuario' ng-show="userCard">
+          <ul class='usuario' ng-show="userCard" ng-repeat="data in menu">
             <li>
               <a>
+                {{data.nombre}}
                 <span>
-                  <img>
+                  <img src="{{data.avatar}}">
                 </span>
               </a>
             </li>
@@ -54,15 +55,14 @@
               </span>
             </a>
           </li>
-
           </ul>
+          
         </li>
         <li>
-          <a>
+          <a href="#/cart">
             <i class="fas fa-shopping-cart icono_login"></i>
           </a>
         </li> 
-        <!-- COMENTAR DESDE EL LI DE ARRIBA HASTA EL LI BAJO DEL UL -->
         </ul>
       </nav><!-- .nav-menu -->
 

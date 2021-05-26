@@ -88,7 +88,15 @@ class shop_dao{
     }
     public function valida_favorites($db,$arryArguments){
         $codigo = $arryArguments[0];
-        $sql = "SELECT favorito FROM favoritos where codArticulo=$codigo";
+        $nom = $arryArguments[1];
+        $sql = "SELECT favorito FROM favoritos where codArticulo=$codigo and nomUser='$nom'";
+        $stmt = $db->ejecutar($sql);
+        return $db->listar($stmt);
+    }
+    public function count_favorites($db,$arryArguments){
+        $codigo = $arryArguments[0];
+        $nom = $arryArguments[1];
+        $sql = "SELECT count(favorito) as contar FROM favoritos where codArticulo=$codigo and nomUser='$nom'";
         $stmt = $db->ejecutar($sql);
         return $db->listar($stmt);
     }

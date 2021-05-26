@@ -6,12 +6,12 @@ class controller_login{
     //     Content::LoadView("login","login");
     //     include (INC_PATH."footer.php");
     // }
-    public function recoverView(){
-        require INC_PATH."header.php";
-        require INC_PATH."menu.html";
-        Content::LoadView("login","recover");
-        include (INC_PATH."footer.php");
-    }
+    // public function recoverView(){
+    //     require INC_PATH."header.php";
+    //     require INC_PATH."menu.html";
+    //     Content::LoadView("login","recover");
+    //     include (INC_PATH."footer.php");
+    // }
     public function show_View(){
         $json = array();
         $json = Content::LoadModel(MODEL_MODEL_LOGIN,"login_model","show_View");

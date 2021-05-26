@@ -1,4 +1,4 @@
-kiwear.controller('controller_login', function($scope,services) {
+kiwear.controller('controller_login', function($scope,services,logInServices,$rootScope) {
     $scope.validateLogin = function(){
         var valida_email = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
         var confEm = 0;
@@ -33,8 +33,9 @@ kiwear.controller('controller_login', function($scope,services) {
                 var contrase = $scope.contrase;
                 datos =  services.post('login','login',{email:email,contrase:contrase}).then(function(data) {
                     localStorage.token = data;
-                    console.log(localStorage.token);
-                    location.href="http://localhost/PHP_AngularJS/#/home"
+                    alert(data);
+                    location.href="#/home/";
+                    logInServices.loadMenu($rootScope,services);
                 });
             }
             
@@ -208,6 +209,7 @@ kiwear.controller('controller_login', function($scope,services) {
                 console.log(data);
                 var token = data;
                 localStorage.setItem('token',token);
+                location.href="#/home/"
             });
           })
           .catch(function(error) {
@@ -228,16 +230,16 @@ kiwear.controller('controller_login', function($scope,services) {
           var authService = firebase.auth();
           authService.signInWithPopup(provider)
         .then(function(result) {
-            // var url = '?page=login&op=socialGit';
             var email = result.user.email;
             var name = result.user.displayName;
             var id = result.user.uid;
-            // var data = {
-            //     email:email,
-            //     name:name,
-            //     id:id
-            // };
             console.log(email,name,id);
+            insertar = services.post('login','socialGithub',{email:email,name:name,id:id}).then(function(data){
+                console.log(data);
+                var token = data;
+                localStorage.setItem('token',token);
+                location.href="#/home/"
+            });
         }).catch(function(error) {
           var errorCode = error.code;
           console.log(errorCode);

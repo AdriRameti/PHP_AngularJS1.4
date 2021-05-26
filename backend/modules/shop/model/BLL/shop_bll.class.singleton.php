@@ -50,44 +50,99 @@ class shop_bll{
     }
     public function favorites($arryArguments){
         try{
-            $this->dao->insert_favorites($this->db,$arryArguments);
-            $check = $this->dao->valida_favorites($this->db,$arryArguments);
+            $val = $this->dao->count_favorites($this->db,$arryArguments);
+            // echo json_encode($val);
+            // exit;
         }catch(Exception $e){
-            return ('error validacion fav');
-            exit;
+
         }
-        foreach($check as $index => $value){
-            $fav = $value['favorito'];
+        foreach($val as $index => $value){
+                $cont = $value['contar'];
         }
-        // echo json_encode($fav);
-        // exit;
-        if($fav==0){
-        $like = $this->dao->update_likeUp($this->db,$arryArguments);
-
-            if ($like == true){
-                $valLike = 1;
-                return $valLike;
-            }else if($like == false){
-                return 'Error like';
-            }
-
-        }else if($fav==1){
-
+        if($cont==0){
+            $this->dao->insert_favorites($this->db,$arryArguments);
             try{
-                $this->dao->delete_favorites($this->db,$arryArguments);
-            $unlike =  $this->dao->update_unlike($this->db,$arryArguments);
-
+            
+                $check = $this->dao->valida_favorites($this->db,$arryArguments);
             }catch(Exception $e){
-                return ('error unlike');
+                return ('error validacion fav');
                 exit;
             }
-
-            if ($unlike == false){
-
-            }else if ($unlike == true){
-                $valLike = 2;
-                return $valLike;
+            foreach($check as $index => $value){
+                $fav = $value['favorito'];
+            }
+            // echo json_encode($fav);
+            // exit;
+            if($fav==0){
+            $like = $this->dao->update_likeUp($this->db,$arryArguments);
+    
+                if ($like == true){
+                    $valLike = 1;
+                    return $valLike;
+                }else if($like == false){
+                    return 'Error like';
+                }
+    
+            }else if($fav==1){
+    
+                try{
+                    $this->dao->delete_favorites($this->db,$arryArguments);
+                $unlike =  $this->dao->update_unlike($this->db,$arryArguments);
+    
+                }catch(Exception $e){
+                    return ('error unlike');
+                    exit;
+                }
+    
+                if ($unlike == false){
+    
+                }else if ($unlike == true){
+                    $valLike = 2;
+                    return $valLike;
+                }
+            }
+        }else{
+            try{
+            
+                $check = $this->dao->valida_favorites($this->db,$arryArguments);
+            }catch(Exception $e){
+                return ('error validacion fav');
+                exit;
+            }
+            foreach($check as $index => $value){
+                $fav = $value['favorito'];
+            }
+            // echo json_encode($fav);
+            // exit;
+            if($fav==0){
+            $like = $this->dao->update_likeUp($this->db,$arryArguments);
+    
+                if ($like == true){
+                    $valLike = 1;
+                    return $valLike;
+                }else if($like == false){
+                    return 'Error like';
+                }
+    
+            }else if($fav==1){
+    
+                try{
+                    $this->dao->delete_favorites($this->db,$arryArguments);
+                $unlike =  $this->dao->update_unlike($this->db,$arryArguments);
+    
+                }catch(Exception $e){
+                    return ('error unlike');
+                    exit;
+                }
+    
+                if ($unlike == false){
+    
+                }else if ($unlike == true){
+                    $valLike = 2;
+                    return $valLike;
+                }
             }
         }
+
     }
 }

@@ -56,12 +56,16 @@ kiwear.config(['$routeProvider','$locationProvider',function($routeProvider,$loc
     {templateUrl: "frontend/modules/login/view/recover.html", 
     controller: "controller_login",
         
+    }).when("/cart", 
+    {templateUrl: "frontend/modules/cart/view/cart.html", 
+    controller: "controller_cart",
+        
     })
 }]);
-kiwear.run(function($rootScope,logInServices){
-    logInServices.loadMenu();
+kiwear.run(function($rootScope,logInServices,services){
+    logInServices.loadMenu($rootScope,services);
 
     $rootScope.logOut = function(){
-        logInServices.logOut();
+        logInServices.logOut($rootScope);
     }
 });

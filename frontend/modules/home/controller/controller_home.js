@@ -22,7 +22,8 @@ kiwear.controller('controller_home', function($scope,$window,categories) {
         }// end_if
     });
     $scope.rediShop = function(nombre){
-        localStorage.nombre = nombre;
-        window.location.href="#/shop"
+        var nom = nombre;
+        localStorage.setItem('nombre',nom);
+        window.location.href="#/shop/"
     };
 });

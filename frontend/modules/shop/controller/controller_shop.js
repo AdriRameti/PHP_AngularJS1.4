@@ -1,6 +1,7 @@
 kiwear.controller('controller_shop', function($scope,services,listar) {
 if(localStorage.nombre){
     let nombreEnv = localStorage.nombre;
+ 
     listar = services.post('shop','show',{nombre: nombreEnv}).then(function(data) {
         console.log(data);
         $scope.listar = data;
@@ -127,12 +128,26 @@ $scope.removeFilters = function(){
         // localStorage.removeItem('nombre');
     
 }
-$scope.favorito = function(){
+$scope.favorito = function(codigo){
     if(localStorage.getItem('token')){
-
+        var codArticulo = codigo;
+        var nomUsuario = localStorage.getItem('nom');
+        like = services.post('shop','favorites',{codArticulo:codArticulo,nomUsuario:nomUsuario}).then(function(data){
+            console.log(data);
+            if(data==1){
+                // array_like.push(codArticulo);
+                // $scope.like = array_like;
+                var element = angular.element(document.querySelector('.coraz'));
+                element.addClass('cora-sty');
+            }else if(data==2){
+                var element = angular.element(document.querySelector('.coraz'))
+                element.removeClass('cora-sty');
+            }
+        });
     }else{
         window.location.href="#/login";
     }
     
 }
+
 });
