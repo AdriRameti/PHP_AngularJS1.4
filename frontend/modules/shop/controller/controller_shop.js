@@ -135,12 +135,11 @@ $scope.favorito = function(codigo){
         like = services.post('shop','favorites',{codArticulo:codArticulo,nomUsuario:nomUsuario}).then(function(data){
             console.log(data);
             if(data==1){
-                // array_like.push(codArticulo);
-                // $scope.like = array_like;
-                var element = angular.element(document.querySelector('.coraz'));
+
+                var element = angular.element(document.querySelector('#A-'+codigo));
                 element.addClass('cora-sty');
             }else if(data==2){
-                var element = angular.element(document.querySelector('.coraz'))
+                var element = angular.element(document.querySelector('#A-'+codigo));
                 element.removeClass('cora-sty');
             }
         });
