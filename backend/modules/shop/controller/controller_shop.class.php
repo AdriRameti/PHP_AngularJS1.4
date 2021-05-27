@@ -78,7 +78,7 @@ class controller_shop{
         $usuario = $_POST['usuario'];
         $json = array();
         $json = Content::LoadModel(MODEL_MODEL_SHOP,"shop_model","showLikes",$usuario);
-        echo json_encode($json);
+        echo json_encode($usuario);
     }
     public function favorites(){
         $codArticulo = $_POST['codArticulo'];

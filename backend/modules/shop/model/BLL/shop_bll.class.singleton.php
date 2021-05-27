@@ -40,6 +40,8 @@ class shop_bll{
     }
     public function showLikes($arryArguments){
         $likes = $this->dao->select_showLikes($this->db,$arryArguments);
+        echo json_encode($likes);
+        exit;
         // return $this->dao->select_showLikes($this->db,$arryArguments);
         $arry = array();
         foreach ($likes as $valor){
