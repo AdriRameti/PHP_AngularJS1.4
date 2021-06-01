@@ -20,7 +20,7 @@ if(localStorage.nombre){
                         for (row in data2){
                             if (data2[row].favorito==1){
                                 
-                                element2=angular.element(document.querySelector('#A-'+data2[row].codArticulo));
+                                element2 = angular.element(document.querySelector('#A-'+data2[row].codArticulo));
                                 element2.addClass('cora-sty');
                             } 
                         }

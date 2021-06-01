@@ -6,6 +6,17 @@
 .hov:hover{
 cursor: pointer;
 }
+.carrito{
+	position: relative;
+	top: 100px;
+	align-items: center;
+	text-align: center;
+	
+}
+.img-1{
+	height: 100px;
+	width: 50%;
+}
 /*******************************************************************************************/
 /*****************************CARRITO******************************************************/
 .container-table{
@@ -53,6 +64,7 @@ cursor: pointer;
 .button-cart{
 	position: relative;
 	left:550px;
+
 }
 /***********************************************************/
 .busqueda2{

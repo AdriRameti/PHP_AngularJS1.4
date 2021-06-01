@@ -1,10 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
+
 <body>
-  <table>
-      <tr>
-          
-      </tr>
-  </table>  
+    <table class="carrito">
+        <tr>
+            <th>Imagen</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Subtotal</th>
+        </tr>
+        <tr ng-repeat="data in mostrar">
+            <td>
+                <img src="http://localhost/PHP_AngularJS/frontend/{{data.img}}" class="img-1">
+            </td>
+            <td>
+                <a>{{data.precio}}</a>
+            </td>
+            <td>
+                <i class="fas fa-minus" ng-click="less()"></i>
+                <a>{{data.cantidad}}</a>
+                <i class="fas fa-plus" ng-click="more()"></i>
+            </td>
+            <td>
+                <a>{{data.subtotal}}€</a>
+            </td>
+        </tr>
+        <tr>
+            <td><hr/></td>
+            <td><hr/></td>
+            <td><hr/></td>
+            <td><hr/></td>
+        </tr>
+        <tr>
+            <td>
+                <a class="btn-cart botones">Seguir Comprando</a>
+            </td>
+            <td>
+                <a class="btn-cart botones">Finalizar Compra</a>
+            </td>
+            
+        </tr>
+    </table>
 </body>
-</html>
+
