@@ -3,24 +3,54 @@ kiwear.controller('controller_shop', function($scope,services,listar) {
 if(localStorage.nombre){
     let nombreEnv = localStorage.nombre;
     let usuario = localStorage.getItem('nom');
-    showLikes = services.post('shop','showLikes',{usuario:usuario}).then(function(res){
-        if(res.length==0){
+    // showLikes = services.post('shop','showLikes',{usuario:usuario}).then(function(res){
+        // if(res.length==0){
             listar = services.post('shop','show',{nombre: nombreEnv}).then(function(data) {
                 $scope.listar = data;
+                var usuario=localStorage.getItem('nom');
+
+                listarLikes = services.post('shop','showLikes',{usuario: usuario}).then(function(data2) {
+                    var codigo=data2[0].codArticulo;
+                    if(data2.length==1){
+                        var element = angular.element(document.querySelector('#A-'+codigo));
+                        element.addClass('cora-sty');
+                        console.log(element);
+                    }else{
+                        var element2 = "";
+                        for (row in data2){
+                            if (data2[row].favorito==1){
+                                
+                                element2=angular.element(document.querySelector('#A-'+data2[row].codArticulo));
+                                element2.addClass('cora-sty');
+                            } 
+                        }
+                    }
+
+                });
                 localStorage.removeItem('nombre');
             });
-        }else if(res.length>0){
-            console.log('hay favoritos');
-            listar = services.post('shop','show',{nombre: nombreEnv}).then(function(data) {
-                $scope.listar = data;
-                localStorage.removeItem('nombre');
-                
-            });
-        }
-    });
 
 }else{
     $scope.listar =listar;
+    var usuario=localStorage.getItem('nom');
+    listarLikes = services.post('shop','showLikes',{usuario: usuario}).then(function(data2) {
+        var codigo=data2[0].codArticulo;
+        if(data2.length==1){
+            var element = angular.element(document.querySelector('#A-'+codigo));
+            element.addClass('cora-sty');
+            console.log(element);
+        }else{
+            var element2 = "";
+            for (row in data2){
+                if (data2[row].favorito==1){
+                    
+                    element2=angular.element(document.querySelector('#A-'+data2[row].codArticulo));
+                    element2.addClass('cora-sty');
+                } 
+            }
+        }
+
+    });
 }
 $scope.details= function(codigo){
 localStorage.codigo = codigo;
@@ -140,6 +170,7 @@ $scope.removeFilters = function(){
         // localStorage.removeItem('nombre');
     
 }
+
 $scope.favorito = function(codigo){
     if(localStorage.getItem('token')){
         var codArticulo = codigo;
