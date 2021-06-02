@@ -23,7 +23,11 @@ class cart_bll{
         return $this->dao->delete_Cart($this->db,$arryArguments);
     }
     public function update_cantity($arryArguments){
-        return $this->dao->update_cantity($this->db,$arryArguments);
+        $rdo = $this->dao->update_cantity($this->db,$arryArguments);
+        if($rdo==true){
+            $can = $this->dao->validate_cantity($this->db,$arryArguments);
+        }
+        return $can;
     }
     public function less_cantity($arryArguments){
         try{
@@ -51,7 +55,8 @@ class cart_bll{
             return ('Error al realizar la actualizacion');
             exit;
         }else{
-            return ('Cantidad actualizada correctamente');
+            $cnt = $this->dao->validate_cantity($this->db,$arryArguments);
+            return $cnt;
             exit;
         }  
         }

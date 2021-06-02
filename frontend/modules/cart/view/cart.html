@@ -12,16 +12,23 @@
                 <img src="http://localhost/PHP_AngularJS/frontend/{{data.img}}" class="img-1">
             </td>
             <td>
-                <a>{{data.precio}}</a>
+                <a>{{data.precio}}€</a>
             </td>
             <td>
-                <i class="fas fa-minus" ng-click="less()"></i>
+                <i class="fas fa-minus" ng-click="less(this.$index,data.codigo)"></i>
                 <a>{{data.cantidad}}</a>
-                <i class="fas fa-plus" ng-click="more()"></i>
+                <i class="fas fa-plus" ng-click="more(this.$index,data.codigo)"></i>
             </td>
             <td>
                 <a>{{data.subtotal}}€</a>
             </td>
+            
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <th><a>Precio Total</a></th>
+            <th><a></a></th>
         </tr>
         <tr>
             <td><hr/></td>
@@ -33,6 +40,8 @@
             <td>
                 <a class="btn-cart botones">Seguir Comprando</a>
             </td>
+            <td></td>
+            <td></td>
             <td>
                 <a class="btn-cart botones">Finalizar Compra</a>
             </td>

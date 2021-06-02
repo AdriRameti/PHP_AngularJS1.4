@@ -11,11 +11,12 @@ cursor: pointer;
 	top: 100px;
 	align-items: center;
 	text-align: center;
-	
+	border-collapse: separate;
+	border-spacing: 100px 5px;
 }
 .img-1{
 	height: 100px;
-	width: 50%;
+	width: 100px;
 }
 /*******************************************************************************************/
 /*****************************CARRITO******************************************************/
@@ -115,7 +116,7 @@ cursor: pointer;
 .cora-sty{
 	color:red;
 }
-.carrito{
+.carrit{
 	position: relative;
 	left: 270px;
 	cursor: pointer;
