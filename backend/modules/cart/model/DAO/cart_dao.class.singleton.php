@@ -22,14 +22,16 @@ class cart_dao{
 
     }
     public function update_cantity($db,$arryArguments){
-        $codProd = $arryArguments;
-        $sql = "UPDATE liniafact SET cantidad=cantidad + 1 WHERE codProd=$codProd";
+        $codProd = $arryArguments[0];
+        $cantidad = $arryArguments[1];
+        $sql = "UPDATE liniafact SET cantidad=$cantidad WHERE codProd=$codProd";
         return $db->ejecutar($sql);
 
     }
     public function less_cantity($db,$arryArguments){
-        $codProd = $arryArguments;
-        $sql = "UPDATE liniafact SET cantidad=cantidad -1 WHERE codProd=$codProd";
+        $codProd = $arryArguments[0];
+        $cantidad = $arryArguments[1];
+        $sql = "UPDATE liniafact SET cantidad=$cantidad WHERE codProd=$codProd";
         return $db->ejecutar($sql);
 
     }
@@ -56,7 +58,7 @@ class cart_dao{
         return $db->listar($stmt);
     }
     public function validate_cantity($db,$arryArguments){
-        $codProd = $arryArguments;
+        $codProd = $arryArguments[0];
         $sql = "SELECT cantidad FROM liniafact where codProd=$codProd";
         $stmt = $db->ejecutar($sql);
         return $db->listar($stmt);

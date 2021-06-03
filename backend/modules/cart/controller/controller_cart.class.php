@@ -19,14 +19,22 @@ class controller_cart{
     }
     public function update_cantity(){
         $codProd = $_POST['codProd'];
+        $cantidad = $_POST['cantidad'];
+        $array= array();
+        array_push($array,$codProd);
+        array_push($array,$cantidad);
         $json = array();
-        $json = Content::LoadModel(MODEL_MODEL_CART,"cart_model","update_cantity",$codProd);
+        $json = Content::LoadModel(MODEL_MODEL_CART,"cart_model","update_cantity",$array);
         echo json_encode($json);
     }
     public function less_cantity(){
         $codProd = $_POST['codProd'];
+        $cantidad = $_POST['cantidad'];
+        $array = array();
+        array_push($array,$codProd);
+        array_push($array,$cantidad);
         $json = array();
-        $json = Content::LoadModel(MODEL_MODEL_CART,"cart_model","less_cantity",$codProd);
+        $json = Content::LoadModel(MODEL_MODEL_CART,"cart_model","less_cantity",$array);
         echo json_encode($json);
     }
     public function delete_item(){
