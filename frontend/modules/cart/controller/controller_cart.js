@@ -1,17 +1,32 @@
 kiwear.controller('controller_cart', function($scope,services) {
     var user = localStorage.getItem('nom');
+    var total = 0;
+    $scope.precioTot=0;
     if(localStorage.getItem('token')){
         mostrar = services.post('cart','showCart',{user:user}).then(function(data){
-            // console.log($scope.mostrar);
+            console.log(data);
             $scope.mostrar = data;
+
+            for(row in data){
+                var subtot = Number.parseInt(data[row].precio*data[row].cantidad)
+                total = total + subtot; 
+                $scope.precioTot = total;
+            }
         });
     }
 
-    $scope.less = function(index,codigo){
-
-        var codProd = codigo;
+    $scope.less = function(index,data){
+        var codProd = data.codigo;
         $scope.mostrar[index].cantidad = parseInt($scope.mostrar[index].cantidad) - 1;
+
         var cantidad = $scope.mostrar[index].cantidad;
+        var precio = parseInt(data.precio);
+        var antSub = $scope.mostrar[index].subtotal;
+        var subtotal = cantidad * precio;
+        $scope.mostrar[index].subtotal = subtotal;
+        total = total + subtotal - antSub; 
+        $scope.precioTot = total;
+
         less = services.post('cart','less_cantity',{codProd:codProd,cantidad:cantidad}).then(function(data){
             console.log(data);
             if(data==0){
@@ -22,25 +37,22 @@ kiwear.controller('controller_cart', function($scope,services) {
             }
         });
     }
-    $scope.more = function(index,codigo){
-        // console.log($scope.mostrar[index].cantidad);
+    $scope.more = function(index,data){
 
-        var codProd = codigo;
-        $scope.mostrar[index].cantidad = parseInt($scope.mostrar[index].cantidad) + 1;
+        var codProd = data.codigo;
+        $scope.mostrar[index].cantidad = parseInt($scope.mostrar[index].cantidad) + 1; 
+
         var cantidad = $scope.mostrar[index].cantidad;
+        var precio = parseInt(data.precio);
+        var antSub = $scope.mostrar[index].subtotal;
+        var subtotal = cantidad * precio;
+        $scope.mostrar[index].subtotal = subtotal;
+        console.log(total);
+        total = total + subtotal - antSub; 
+        $scope.precioTot = total;
+
         more = services.post('cart','update_cantity',{codProd:codProd,cantidad:cantidad}).then(function(data){
             console.log(data);
         });
     }
-    // $scope.more = function(index,data){
-    //     var codProd = data.codigo;
-    //     var inde = index;
-    //     less = services.post('cart','update_cantity',{codProd:codProd}).then(function(data){
-    //         console.log(data[0].cantidad);
-    //          cantidad = data[0].cantidad
-    //          $scope.mostrar[inde].cantidad  = cantidad ;
-    //          location.reload();
-    //     });
-        
-    // }
 });

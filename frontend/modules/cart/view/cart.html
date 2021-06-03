@@ -15,9 +15,9 @@
                 <a>{{data.precio}}€</a>
             </td>
             <td>
-                <i class="fas fa-minus" ng-click="less(this.$index,data.codigo)"></i>
+                <i class="fas fa-minus" ng-click="less(this.$index,data)"></i>
                 <a>{{data.cantidad}}</a>
-                <i class="fas fa-plus" ng-click="more(this.$index,data.codigo)"></i>
+                <i class="fas fa-plus" ng-click="more(this.$index,data)"></i>
             </td>
             <td>
                 <a>{{data.subtotal}}€</a>
@@ -28,7 +28,7 @@
             <td></td>
             <td></td>
             <th><a>Precio Total</a></th>
-            <th><a></a></th>
+            <th><a>{{precioTot}}€</a></th>
         </tr>
         <tr>
             <td><hr/></td>
