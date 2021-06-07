@@ -13,8 +13,9 @@ class controller_cart{
         echo json_encode($json);
     }
     public function deleteCart(){
+        $user = $_POST['user'];
         $json = array();
-        $json = Content::LoadModel(MODEL_MODEL_CART,"cart_model","deleteCart");
+        $json = Content::LoadModel(MODEL_MODEL_CART,"cart_model","deleteCart",$user);
         echo json_encode($json);
     }
     public function update_cantity(){

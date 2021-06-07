@@ -71,8 +71,8 @@ class cart_bll{
         }catch(Exception $e){
             
         }
-        echo json_encode($arryArguments);
-        exit;
+        // echo json_encode($arryArguments);
+        // exit;
         if (!$valid || mysqli_num_rows($valid)==0 ){
             try{
                 $insert = $this->dao->insert_item($this->db,$arryArguments);

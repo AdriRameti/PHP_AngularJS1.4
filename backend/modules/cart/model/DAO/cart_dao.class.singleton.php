@@ -10,14 +10,14 @@ class cart_dao{
         return self::$_instance;
     }
 
-    public function select_showCart($db,$arryArguments){
-        $sql = "SELECT r.codigo,r.img,r.precio,l.cantidad, (r.precio*l.cantidad) as subtotal from ropa r inner join liniafact l ON r.codigo=l.codProd;";
+    public function select_showCart($db,$user){
+        $sql = "SELECT r.codigo,r.img,r.precio,l.cantidad, (r.precio*l.cantidad) as subtotal from ropa r inner join liniafact l ON r.codigo=l.codProd where l.codUser = '$user';";
         $stmt = $db->ejecutar($sql);
         return $db->listar($stmt);
     }
     
-    public function delete_Cart($db,$arryArguments){
-        $sql = "DELETE FROM liniafact";
+    public function delete_Cart($db,$user){
+        $sql = "DELETE FROM liniafact where codUser='$user'";
         return $db->ejecutar($sql);
 
     }
@@ -46,6 +46,7 @@ class cart_dao{
         $usuario = $arryArguments[0];
         $codArticulo = $arryArguments[1];
         $sql = "INSERT INTO liniafact (codProd,codUser,cantidad) VALUES ($codArticulo,'$usuario','1')";
+        // die($sql);
         return $db->ejecutar($sql);
 
     }

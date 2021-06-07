@@ -92,7 +92,7 @@
               <a><i ng-click="favorito(data.codigo)"  class="A-{{data.codigo}} clico fas fa-heart cora coraz" id="A-{{data.codigo}}"></i></a>
               <br/>
               <a>{{data.precio}}€</a>
-              <i class="cart fas fa-cart-plus carrit"></i>
+              <i ng-click="addCart(data.codigo)" class="cart fas fa-cart-plus carrit"></i>
             </div>
           </div>
           

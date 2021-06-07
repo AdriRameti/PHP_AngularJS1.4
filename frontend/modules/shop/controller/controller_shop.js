@@ -191,5 +191,16 @@ $scope.favorito = function(codigo){
     }
     
 }
+$scope.addCart = function(codigo){
 
+    if (localStorage.getItem('token')===null){
+        window.location.href="/FrameworkPHP/login/list";
+    }else{
+        var usuario = localStorage.getItem('nom');
+        var codArticulo =codigo;
+        insert_item = services.post('cart','insert_item',{usuario:usuario,codArticulo:codArticulo}).then(function(data){
+            console.log(data);
+        });
+    }
+}
 });
