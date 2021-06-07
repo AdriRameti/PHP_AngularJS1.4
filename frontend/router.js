@@ -1,4 +1,4 @@
-var kiwear = angular.module('kiwear',['ngRoute']);
+var kiwear = angular.module('kiwear',['ngRoute','ui.bootstrap']);
 kiwear.config(['$routeProvider','$locationProvider',function($routeProvider,$locationProvider){
     $routeProvider
     .when("/home", 

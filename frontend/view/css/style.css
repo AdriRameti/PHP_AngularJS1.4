@@ -18,6 +18,16 @@ cursor: pointer;
 	height: 100px;
 	width: 100px;
 }
+.pagin{
+	position: relative;
+	left: 1200px;
+	top: 240px;
+	z-index: 1;
+}
+.titu{
+	position: relative;
+	top: 50px;
+}
 /*******************************************************************************************/
 /*****************************CARRITO******************************************************/
 .container-table{

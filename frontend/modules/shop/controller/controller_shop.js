@@ -1,5 +1,21 @@
 kiwear.controller('controller_shop', function($scope,services,listar) {
-
+    // $scope.listar = []
+    var listaTodos = listar;
+    $scope.currentPage = 1
+    ,$scope.numPerPage = 5
+    ,$scope.maxSize = 10;
+    $scope.numPages = function () {
+        console.log( Math.ceil(listaTodos.length / $scope.numPerPage));
+        return Math.ceil(listaTodos.length / $scope.numPerPage);
+      };
+      
+      $scope.$watch('currentPage + numPerPage', function() {
+          console.log('asdds');
+        var begin = (($scope.currentPage - 1) * $scope.numPerPage)
+        , end = begin + $scope.numPerPage;
+        console.log(begin);
+        $scope.listar = listaTodos.slice(begin, end);
+      });
 if(localStorage.nombre){
     let nombreEnv = localStorage.nombre;
     let usuario = localStorage.getItem('nom');

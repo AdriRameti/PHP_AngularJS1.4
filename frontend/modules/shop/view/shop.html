@@ -7,13 +7,20 @@
     <title>Shop</title>
 </head>
 <body>
+
     <div class="container_list">
+        <div class="pagin" data-pagination="" data-num-pages="numPages()" 
+        data-current-page="currentPage" data-max-size="maxSize"  
+        data-boundary-links="true">
+        </div>
         <header class="Head">
             <div class="tituloL">
-                <h1>Nuestros Artículos</h1>
+                <h1 class="titu">Nuestros Artículos</h1>
                 <p>Descubre todos los artículos del mercado y escoge el diseño que mas te guste</p>
+
                 <form action="" class="formBusc">
                     <input  type="text" ng-model="search" class="busqueda" placeholder="Buscar"/>
+
                 </form>
                 <div class="catego_List" id="catego_List">
                     <div class="contenedor-filter">
@@ -98,7 +105,9 @@
           
           </div>
           </section>
+
     </div>
+
 </body>
 <!-- <script src="modules/shop/vista/js/shop.js"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/muuri@0.9.3/dist/muuri.min.js"></script>
