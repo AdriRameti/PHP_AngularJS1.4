@@ -13,8 +13,6 @@ class redirection{
         return self::$_instance;
     }
     public function initApp(){
-        // $url = $this-> getUrl();
-        // $met = $this-> getOption();
 
         call_user_func(array($this->loadPage(),$this->loadFunc()));
 
