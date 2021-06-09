@@ -10,7 +10,7 @@ This application simulates a web store about clothes, being able to be a simile 
     <h4>FILTERS</h4>
     <img src="https://user-images.githubusercontent.com/75810680/109744802-2f7d7880-7bd3-11eb-9384-60319b491770.png" width="1000px" height="800">
     <h4>PAGINATION</h4>
-    <img src="https://user-images.githubusercontent.com/75810680/109744886-576cdc00-7bd3-11eb-9a7d-1aca97e39834.png" width="1000px">
+    <img src="https://user-images.githubusercontent.com/75810680/121375562-1d814380-c941-11eb-9b5e-f44a0e020663.png" width="1000px">
     <h4>DETAILS</h4>
     <img src="https://user-images.githubusercontent.com/75810680/109745101-a61a7600-7bd3-11eb-9dbe-42ab4e09e63a.png" width="1000px">
     <h4>API REST</h4>
