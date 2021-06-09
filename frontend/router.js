@@ -60,6 +60,14 @@ kiwear.config(['$routeProvider','$locationProvider',function($routeProvider,$loc
     {templateUrl: "frontend/modules/cart/view/cart.html", 
     controller: "controller_cart",
         
+    }).when("/about", 
+    {templateUrl: "frontend/modules/about/view/aboutus.html", 
+    controller: "controller_about",
+        
+    }).when("/contact", 
+    {templateUrl: "frontend/modules/contact/view/contactus.html", 
+    controller: "controller_contact",
+        
     })
 }]);
 kiwear.run(function($rootScope,logInServices,services){
