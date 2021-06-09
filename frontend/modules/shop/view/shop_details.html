@@ -105,6 +105,16 @@
         <div>
             <details open='' class="detallesApi">
                 <summary>Productos de tu interes</summary>
+                <div>
+                    <span ng-repeat="data in apiDet">
+                        <img  src="{{data.volumeInfo.imageLinks.smallThumbnail}}">
+                        <p>
+                            <a>{{data.volumeInfo.title}}</a>
+                            <a>{{data.saleInfo.retailPrice.amount}}€</a>
+                        </p>
+
+                    </span>
+                </div>
             </details>
         </div>
     </div>
