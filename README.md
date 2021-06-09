@@ -15,6 +15,12 @@ This application simulates a web store about clothes, being able to be a simile 
     <img src="https://user-images.githubusercontent.com/75810680/109745101-a61a7600-7bd3-11eb-9dbe-42ab4e09e63a.png" width="1000px">
     <h4>API REST</h4>
     <img src="https://user-images.githubusercontent.com/75810680/109745266-e4b03080-7bd3-11eb-911a-d1b563784dab.png" width="1000px">
+    <h4>REGISTER</h4>
+    <img src="https://user-images.githubusercontent.com/75810680/121388198-91c0e480-c94b-11eb-947a-dc096f61b046.png" width="1000px">
+    <h4>LOGIN</h4>
+    <img src="https://user-images.githubusercontent.com/75810680/121388075-72c25280-c94b-11eb-83c6-65d13172bdf1.png" width="1000px">
+    <h4>RECOVER</h4>
+    <img src="https://user-images.githubusercontent.com/75810680/121388393-c03ebf80-c94b-11eb-9bfc-b783f63dced2.png" width="1000px">
         <h2>Explain th treated sections</h2>
     <table>
       <thead>
@@ -51,7 +57,19 @@ This application simulates a web store about clothes, being able to be a simile 
             <tr>
                 <th>Api Rest</th>
                 <td>Finally, in the REST API section, we have consumed the information from an external API which will show us information from the books related to the category we are in.</td>
-            </tr>            
+            </tr>
+            <tr>
+                <th>Login</th>
+                <td>In order to access the account we will need to have an account on our website. You can log in with the email and password with which you have registered or you can also log in with a Google account or with a GitHub account. We can do this thanks to the external application firebase.</td>
+            </tr>
+            <tr>
+                <th>Register</th>
+                <td>If we want to buy items on the page, we will need to have an account where we will associate each product with the user. For this, customers must register on the website. Once they have filled out the form, a confirmation email will be sent to them. We can send this email thanks to the external application mailgun.</td>
+            </tr> 
+            <tr>
+                <th>Recover</th>
+                <td>In the event that we want to log in and we do not remember our password, we will have the option of recovering it from the user's email, which will receive an email where a link will be passed to him that when clicking, will show him a form to establish the new one. password.</td>
+            </tr>              
         </tbody>
     </table>
     <h4>Built with:</h4>
@@ -68,4 +86,9 @@ This application simulates a web store about clothes, being able to be a simile 
         <li><a href="https://getbootstrap.com/">Extension BOOTSTRAP</a></li>
         <li><a href="https://muuri.dev/">Extension MUURII for animation</a></li>
         <li><a href="https://www.mysql.com/products/workbench/">MYSQLI WORCKBENCH</a></li>
+    </ul>
+    <h4>Api Rest</h4>
+    <ul>
+        <li><a href="https://www.mailgun.com/">Mailgun</a></li>
+        <li><a href="https://firebase.google.com/?hl=es">Firebase</a></li>
     </ul>
