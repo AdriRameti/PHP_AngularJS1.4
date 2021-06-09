@@ -6,7 +6,7 @@ This application simulates a web store about clothes, being able to be a simile 
     <h4>CATEGORIES</h4>
     <img src="https://user-images.githubusercontent.com/75810680/109744397-82a2fb80-7bd2-11eb-94d2-c315fae91081.png" width="1000px">
     <h4>SHOP VIEWS</h4>
-    <img src="https://user-images.githubusercontent.com/75810680/109744684-0230ca80-7bd3-11eb-910d-2a294e6ab64f.png" width="1000px">
+    <img src="https://user-images.githubusercontent.com/75810680/121375082-bcf20680-c940-11eb-8d78-ffd455f8a5db.png" width="1000px">
     <h4>FILTERS</h4>
     <img src="https://user-images.githubusercontent.com/75810680/109744802-2f7d7880-7bd3-11eb-9384-60319b491770.png" width="1000px" height="800">
     <h4>PAGINATION</h4>
@@ -42,7 +42,7 @@ This application simulates a web store about clothes, being able to be a simile 
             </tr>
             <tr>
                 <th>Pagination</th>
-                <td>Regarding paging, we have used the BOOTPAG extension to be able to do it. The pages will be automatically calculated with respect to the number of products knowing that each of them shows 3 products. We will also calculate the OFFSET which is the row for which we want to start counting to show that information</td>
+                <td>Regarding paging, we have used the BOOTPAG extension to be able to do it. The pages will be automatically calculated with respect to the number of products knowing that each of them shows 5 products. We will also calculate the OFFSET which is the row for which we want to start counting to show that information</td>
             </tr>
             <tr>
                 <th>Details</th>
