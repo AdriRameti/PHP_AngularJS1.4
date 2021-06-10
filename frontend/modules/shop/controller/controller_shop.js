@@ -10,17 +10,13 @@ kiwear.controller('controller_shop', function($scope,services,listar) {
       };
       
       $scope.$watch('currentPage + numPerPage', function() {
-          console.log('asdds');
         var begin = (($scope.currentPage - 1) * $scope.numPerPage)
         , end = begin + $scope.numPerPage;
-        console.log(begin);
         $scope.listar = listaTodos.slice(begin, end);
       });
 if(localStorage.nombre){
     let nombreEnv = localStorage.nombre;
     let usuario = localStorage.getItem('nom');
-    // showLikes = services.post('shop','showLikes',{usuario:usuario}).then(function(res){
-        // if(res.length==0){
             listar = services.post('shop','show',{nombre: nombreEnv}).then(function(data) {
                 $scope.listar = data;
                 var usuario=localStorage.getItem('nom');
@@ -149,9 +145,10 @@ $scope.validaFilters = function(){
         }
 }
 $scope.removeFilters = function(){
+    console.log('hola');
     let nombreEnv = localStorage.nombre;
     if(nombreEnv){
-        listar = services.post('shop','show',{nombre: nombreEnv}).then(function(data) {
+        listar = services.post('shop','listar').then(function(data) {
             console.log(data);
             $scope.listar = data;
             document.filtrosShop.marca1.checked = false;
@@ -169,19 +166,23 @@ $scope.removeFilters = function(){
             document.filtrosShop.talla4.checked = false;
         });
     }else{
-        document.filtrosShop.marca1.checked = false;
-        document.filtrosShop.marca2.checked = false;
-        document.filtrosShop.marca3.checked = false;
-        document.filtrosShop.marca4.checked = false;
-        document.filtrosShop.marca5.checked = false;
-        document.filtrosShop.marca6.checked = false;
-        document.filtrosShop.marca7.checked = false;
-        document.filtrosShop.marca8.checked = false;
-        document.filtrosShop.marca9.checked = false;
-        document.filtrosShop.talla1.checked = false;
-        document.filtrosShop.talla2.checked = false;
-        document.filtrosShop.talla3.checked = false;
-        document.filtrosShop.talla4.checked = false;
+        listar = services.post('shop','listar').then(function(data) {
+            console.log(data);
+            $scope.listar = data;
+            document.filtrosShop.marca1.checked = false;
+            document.filtrosShop.marca2.checked = false;
+            document.filtrosShop.marca3.checked = false;
+            document.filtrosShop.marca4.checked = false;
+            document.filtrosShop.marca5.checked = false;
+            document.filtrosShop.marca6.checked = false;
+            document.filtrosShop.marca7.checked = false;
+            document.filtrosShop.marca8.checked = false;
+            document.filtrosShop.marca9.checked = false;
+            document.filtrosShop.talla1.checked = false;
+            document.filtrosShop.talla2.checked = false;
+            document.filtrosShop.talla3.checked = false;
+            document.filtrosShop.talla4.checked = false;
+        });
     }
         // localStorage.removeItem('nombre');
     

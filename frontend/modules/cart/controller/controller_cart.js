@@ -37,6 +37,7 @@ kiwear.controller('controller_cart', function($scope,services) {
                 delet = services.post('cart','delete_item',{codProd:codProd}).then(function(data){
                     console.log(data);
                 });
+                location.reload();
             }
         });
     }
