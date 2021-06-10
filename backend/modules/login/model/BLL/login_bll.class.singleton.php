@@ -68,7 +68,6 @@ class login_bll{
         if($val){
             try{
                 $valid = $this->dao->validate_verifyUser($this->db,$arryArguments);
-                return $valid;
             }catch(Exception $e){
                 Content::loadError();
             }

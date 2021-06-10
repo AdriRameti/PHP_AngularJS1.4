@@ -65,18 +65,18 @@
               $('.a-arrow').css('display', 'none');
           }
        
-          $('.left-arrow').on('click',function() {
-              if (current > 0) {
-                console.log(current);
-                  current = current - 1;
-              } else {
-                  current = numImages - 3;
-              }
+          // $('.left-arrow').on('click',function() {
+          //     if (current > 0) {
+          //       console.log(current);
+          //         current = current - 1;
+          //     } else {
+          //         current = numImages - 3;
+          //     }
        
-              $(".carrusel").animate({"left": -($('#product_'+current).position().left)}, 600);
+          //     $(".carrusel").animate({"left": -($('#product_'+current).position().left)}, 600);
        
-              return false;
-          });
+          //     return false;
+          // });
        
           $('.left-arrow').on('hover', function() {
               $(this).css('opacity','0.5');

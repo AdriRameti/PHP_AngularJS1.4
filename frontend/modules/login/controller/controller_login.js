@@ -1,4 +1,4 @@
-kiwear.controller('controller_login', function($scope,services,logInServices,$rootScope) {
+kiwear.controller('controller_login', function($scope,services,logInServices,$rootScope,$window) {
     $scope.validateLogin = function(){
         var valida_email = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
         var confEm = 0;
@@ -32,10 +32,11 @@ kiwear.controller('controller_login', function($scope,services,logInServices,$ro
                 var email = $scope.email;
                 var contrase = $scope.contrase;
                 datos =  services.post('login','login',{email:email,contrase:contrase}).then(function(data) {
+                    console.log(data);
                     localStorage.token = data;
-                    alert(data);
                     location.href="#/home/";
                     logInServices.loadMenu($rootScope,services);
+                    $window.location.reload();
                 });
             }
             
@@ -209,7 +210,8 @@ kiwear.controller('controller_login', function($scope,services,logInServices,$ro
                 console.log(data);
                 var token = data;
                 localStorage.setItem('token',token);
-                location.href="#/home/"
+                location.href="#/home/";
+                $window.location.reload();
             });
           })
           .catch(function(error) {
@@ -239,6 +241,7 @@ kiwear.controller('controller_login', function($scope,services,logInServices,$ro
                 var token = data;
                 localStorage.setItem('token',token);
                 location.href="#/home/"
+                $window.location.reload();
             });
         }).catch(function(error) {
           var errorCode = error.code;
