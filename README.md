@@ -74,7 +74,6 @@ This application simulates a web store about clothes, being able to be a simile 
     </table>
     <h4>Built with:</h4>
     <ul>
-        <li><a href="https://www.javascript.com/">JAVASCRIPT</a></li>
         <li><a href="https://angularjs.org/">ANGULARJS</a></li>
         <li><a href="https://www.php.net/">PHP</a></li>
         <li><a href="https://www.mysql.com/">MYSQLI</a></li>
